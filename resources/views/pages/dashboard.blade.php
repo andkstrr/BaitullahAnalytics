@@ -1,0 +1,87 @@
+@extends('layout.navbar')
+
+@section('content')
+    <div class="background-section">
+        <div class="container-fluid">
+            <div class="row mb-5">
+                {{-- NAVIGASI & INFORMASI --}}
+                <div class="col-md-4">
+                    <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #3C7447; opacity: 70%;">
+                        <div class="card-body">
+                            <div class="card-content text-white mt-10">
+                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <h3 class="card-text fw-semibold fs-2 mb-0">1526</h3>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title mb-0 fs-6 fw-normal">Total Pengunjung</h5>
+                                    <a href="#">
+                                        <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #205529; opacity: 80%;">
+                        <div class="card-body">
+                            <div class="card-content text-white mt-10">
+                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <h3 class="card-text fw-semibold fs-2 mb-0">14</h3>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung Aktif</h5>
+                                    <a href="#">
+                                        <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #123419; opacity: 90%;"">
+                        <div class="card-body">
+                            <div class="card-content text-white mt-10">
+                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <h3 class="card-text fw-semibold fs-2 mb-0">4</h3>
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-title mb-0 fs-6 fw-normal">Sumber Lalu Lintas</h5>
+                                    <a href="#">
+                                        <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                {{-- WAKTU & DURASI KUNJUNGAN --}}
+                <div class="col-md-6">
+                    <div class="card mb-5 pb-20 rounded-4 shadow-lg">
+                        <div class="card-header text-black">
+                            <h5 class="fw-semibold fs-5">Waktu Kunjungan</h5>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+                    <div class="card mb-10 pb-20 rounded-4 shadow-lg">
+                        <div class="card-header text-black">
+                            <h5 class="fw-semibold fs-5">Durasi Kunjungan</h5>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- KATEGORI PAKET --}}
+                <div class="col-md-6">
+                    <div class="card mb-5 pb-20 rounded-4 shadow-lg">
+                        <div class="card-header text-black">
+                            <h5 class="fw-semibold fs-5">Kategori Paket</h5>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
