@@ -9,7 +9,7 @@
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #3C7447; opacity: 70%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
-                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <img src="{{ asset('assets/images/icon/Users Group White.png') }}" alt="Users Icon">
                                 <h3 class="card-text fw-semibold fs-2 mb-0">1526</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Total Pengunjung</h5>
@@ -25,7 +25,7 @@
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #205529; opacity: 80%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
-                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <img src="{{ asset('assets/images/icon/Users Group White.png') }}" alt="Users Icon">
                                 <h3 class="card-text fw-semibold fs-2 mb-0">14</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung Aktif</h5>
@@ -41,7 +41,7 @@
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #123419; opacity: 90%;"">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
-                                <img src="{{ asset('assets/images/icon/Users Group.png') }}" alt="Users Icon">
+                                <img src="{{ asset('assets/images/icon/Users Group White.png') }}" alt="Users Icon">
                                 <h3 class="card-text fw-semibold fs-2 mb-0">4</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Sumber Lalu Lintas</h5>
