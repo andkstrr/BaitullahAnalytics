@@ -23,21 +23,51 @@
     <nav class="navbar navbar-expand-lg bg-white p-3 shadow-lg">
         <div class="container">
             <a class="navbar-brand">
-                <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Logo" />
+                <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item gap-3">
                     <a href="#" class="nav-link position-relative">
+                        {{-- JUMLAH NOTIFIKASI --}}
                         <span class="badge position-absolute top-0 end-0 text-bg-danger">5</span>
                         <span><i class="fa-regular fa-bell fa-xl" style="color: #000000;"></i></span>
                     </a>
-                    <a href="#" class="nav-link">
-                        <img src="{{ asset('assets/images/icon/Burger Nav.jpg')}}" width="40" alt="Nav Burger"></span>
+                    <a style="cursor: pointer" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                        <img src="{{ asset('assets/images/icon/Burger Nav.jpg') }}" width="40" alt="Nav Burger">
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <!-- SIDEBAR -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header rounded-bottom-5">
+            <img src="{{ asset('assets/images/logo/Baitullah Analytics.png') }}" alt="Baitullah Analytics" class="img-fluid offcanvas-title" width="180">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- SIDEBAR CONTENT -->
+            <ul class="list-unstyled ">
+                <li class="d-flex align-items-center mb-5 gap-5">
+                    <i class="fa-solid fa-laptop"></i>
+                    <a href="#" class="nav-link text-black fs-6 fw-semibold"> Dashboard</a>
+                </li>
+                <li class="d-flex align-items-center mb-5 gap-5">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Total Pengunjung</a>
+                </li>
+                <li class="d-flex align-items-center mb-5 gap-5">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
+                </li>
+                <li class="d-flex align-items-center mb-5 gap-5">
+                    <i class="fa-solid fa-link"></i>
+                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Sumber Lalu Lintas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     {{-- SECTION CONTENT --}}
     <div class="section py-16">

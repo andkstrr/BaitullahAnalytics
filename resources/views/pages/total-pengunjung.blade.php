@@ -30,6 +30,7 @@
                     </div>
                 </div>
 
+                {{-- TOTAL PENGUNJUNG --}}
                 <div class="col-md-6">
                     <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="d-flex justify-content-between text-black p-5">
@@ -57,6 +58,7 @@
                 <h3 class="fw-semibold text-black">Aktivitas Terakhir</h3>
                 <div class="d-flex gap-3">
                     <div class="dropdown dropdown-hover">
+                        {{-- EXPORT BUTTON --}}
                         <a class="btn btn-success dropdown-toggle" href="#" role="button">
                           Export (.xslx)
                         </a>
@@ -69,12 +71,14 @@
                           </li>
                         </ul>
                     </div>
+                    {{-- SEARCH PENGUNJUNG BUTTON --}}
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#searchUser">
                         <i class="fa-solid fa-search"></i>
                     </button>
                 </div>
             </div>
 
+            {{-- TABLE HISTORY KUNJUNGAN --}}
             <div class="table-responsive">
                 <table class="table table-hover table-borderless">
                     <thead>
@@ -189,5 +193,5 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 @endsection
