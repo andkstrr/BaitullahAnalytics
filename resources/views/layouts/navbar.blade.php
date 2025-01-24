@@ -17,6 +17,13 @@
 
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{-- INTERNAL CSS --}}
+    <style>
+        .nav-list:hover {
+            background-color: black;
+        }
+    </style>
 </head>
 <body style="background-color: #f1f1f1f1">
     {{-- NAVBAR --}}
@@ -41,14 +48,14 @@
     </nav>
 
     <!-- SIDEBAR -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header rounded-bottom-5">
             <img src="{{ asset('assets/images/logo/Baitullah Analytics.png') }}" alt="Baitullah Analytics" class="img-fluid offcanvas-title" width="180">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <!-- SIDEBAR CONTENT -->
-            <ul class="list-unstyled ">
+            <ul class="list-unstyled p-5">
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-laptop"></i>
                     <a href="#" class="nav-link text-black fs-6 fw-semibold"> Dashboard</a>
@@ -64,6 +71,10 @@
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-link"></i>
                     <a href="#" class="nav-link text-black fs-6 fw-semibold">Sumber Lalu Lintas</a>
+                </li>
+                <li class="d-flex align-items-center mb-5 gap-7">
+                    <i class="fa-regular fa-bell"></i>
+                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Notifikasi</a>
                 </li>
             </ul>
         </div>
