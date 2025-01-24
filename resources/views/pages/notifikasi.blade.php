@@ -12,7 +12,7 @@
                         <div class="card-body px-16">
                             <table class="table table-hover align-middle">
                                 <tbody>
-                                    @foreach (range(1, 2) as $item)
+                                    @foreach (range(1, 5) as $item)
                                     <tr data-bs-toggle="modal" data-bs-target="#showDetailNotification">
                                         <td class="fw-semibold">Andika Satrio</td>
                                         <td class="text-muted text-center"><b>Andika, </b>Telah melakukan pembelian Paket Umroh Ramadhan</td>
