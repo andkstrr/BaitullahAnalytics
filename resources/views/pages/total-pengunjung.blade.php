@@ -53,7 +53,7 @@
         </div>
 
         {{-- TABLE HISTORY AKTIVITAS --}}
-        <div class="container-fluid bg-white p-5 shadow-lg rounded-4">
+        <div class="container-fluid bg-white p-9 mx-4 shadow-lg rounded-4">
             <div class="table-header d-flex justify-content-between mb-8">
                 <h3 class="fw-semibold text-black">Aktivitas Terakhir</h3>
                 <div class="d-flex gap-3">

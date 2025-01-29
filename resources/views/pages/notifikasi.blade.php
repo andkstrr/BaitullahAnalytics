@@ -6,17 +6,35 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-5 rounded-4 shadow-lg">
-                        <div class="card-header text-black p-5 text-center">
+                        <div class="card-header text-black p-5 px-7 text-start">
                             <h5 class="fw-semibold fs-4">Notifikasi</h5>
                         </div>
-                        <div class="card-body px-16">
+                        <div class="card-body px-16 text-black">
                             <table class="table table-hover align-middle">
                                 <tbody>
                                     @foreach (range(1, 5) as $item)
-                                    <tr data-bs-toggle="modal" data-bs-target="#showDetailNotification">
-                                        <td class="fw-semibold">Andika Satrio</td>
-                                        <td class="text-muted text-center"><b>Andika, </b>Telah melakukan pembelian Paket Umroh Ramadhan</td>
-                                        <td class="text-muted">21 Jan</td>
+                                    <tr>
+                                        <div class="table-responsive">
+                                            <div class="d-flex justify-content-between table-hover " data-bs-toggle="modal" data-bs-target="#showDetailNotification">
+                                                <div class="table-content">
+                                                    <div class="d-flex gap-8">
+                                                        <span class="avatar"><i class="fa-solid fa-user"></i></span>
+                                                        <div class="mb-0">
+                                                            <a href="#" class="btn btn-success mb-2 p-1 fs-xs rounded-3">PENGGUNA BARU</a>
+                                                            <h4 class="title-notification fw-semibold fs-6 mb-0">Andika Satrio Nurcahyo, baru saja bergabung dengan baitullah.co.id</h4>
+                                                            <p class="content-notification text-muted fs-xs">Lihat profil <a href="#" class="text-muted">Andika Satrio</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="notification-time">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <i class="fa-regular fa-clock fa-xs"></i>
+                                                        <span class="text-muted fs-xs">21 Jan 2025, 15.57 WIB</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="mb-5">
+                                        </div>
                                     </tr>
                                     @endforeach
                                 </tbody>

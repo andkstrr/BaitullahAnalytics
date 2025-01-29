@@ -23,7 +23,7 @@
 </head>
 <body style="background-color: #f1f1f1f1">
     {{-- NAVBAR --}}
-    <nav class="navbar navbar-expand-lg bg-white p-3 shadow-lg">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white p-3 shadow-lg">
         <div class="container">
             <a href="{{ route('analytics.dashboard') }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
