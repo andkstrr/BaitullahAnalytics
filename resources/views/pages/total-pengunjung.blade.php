@@ -21,7 +21,7 @@
                                 <h3 class="card-text fw-semibold fs-2">14</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung Sedang Aktif</h5>
-                                    <a href="#">
+                                    <a href="{{ route('analytics.total_pengunjung_aktif') }}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: black"></i>
                                     </a>
                                 </div>

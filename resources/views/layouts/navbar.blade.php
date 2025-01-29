@@ -19,22 +19,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {{-- INTERNAL CSS --}}
-    <style>
-        .nav-list:hover {
-            background-color: black;
-        }
-    </style>
+    <style></style>
 </head>
 <body style="background-color: #f1f1f1f1">
     {{-- NAVBAR --}}
     <nav class="navbar navbar-expand-lg bg-white p-3 shadow-lg">
         <div class="container">
-            <a class="navbar-brand">
+            <a href="{{ route('analytics.dashboard') }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item gap-3">
-                    <a href="#" class="nav-link position-relative">
+                    <a href="{{ route('analytics.notifikasi') }}" class="nav-link position-relative">
                         {{-- JUMLAH NOTIFIKASI --}}
                         <span class="badge position-absolute top-0 end-0 text-bg-danger">5</span>
                         <span><i class="fa-regular fa-bell fa-xl" style="color: #000000;"></i></span>
@@ -58,15 +54,15 @@
             <ul class="list-unstyled p-5">
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-laptop"></i>
-                    <a href="#" class="nav-link text-black fs-6 fw-semibold"> Dashboard</a>
+                    <a href="{{ route('analytics.dashboard') }}" class="nav-link text-black fs-6 fw-semibold"> Dashboard</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Total Pengunjung</a>
+                    <a href="{{ route('analytics.total_pengunjung') }}" class="nav-link text-black fs-6 fw-semibold">Total Pengunjung</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
+                    <a href="{{ route('analytics.total_pengunjung_aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-link"></i>
@@ -74,7 +70,7 @@
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-7">
                     <i class="fa-regular fa-bell"></i>
-                    <a href="#" class="nav-link text-black fs-6 fw-semibold">Notifikasi</a>
+                    <a href="{{ route('analytics.notifikasi') }}" class="nav-link text-black fs-6 fw-semibold">Notifikasi</a>
                 </li>
             </ul>
         </div>
