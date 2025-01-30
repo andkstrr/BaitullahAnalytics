@@ -17,8 +17,8 @@ class TotalVisitorChart
     {
         return $this->totalVisitorChart
             ->polarAreaChart()
-            ->addData([20, 24, 30, 40])
-            ->setColors(['#3A3A3A', '#868686', '#D9D9D9', '#6F9677'])
-            ->setLabels(['Laki-laki', 'Perempuan', 'Unknown', 'Unknown']);
+            ->addData([20, 24, 30, 40, 50])
+            ->setColors(['#3A3A3A', '#868686', '#B8860B', '#6F9677', '#205529'])
+            ->setLabels(['Laki-laki', 'Perempuan', 'Mobile', 'Tablet', 'Dekstop']);
     }
 }
