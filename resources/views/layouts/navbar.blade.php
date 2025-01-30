@@ -18,12 +18,15 @@
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- AOS CSS --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     {{-- INTERNAL CSS --}}
     <style></style>
 </head>
 <body style="background-color: #f1f1f1f1">
     {{-- NAVBAR --}}
-    <nav class="navbar navbar-expand-lg sticky-top bg-white p-3 shadow-lg">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white p-1 shadow-lg">
         <div class="container">
             <a href="{{ route('analytics.dashboard') }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
@@ -84,6 +87,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
     @stack('script')
 </body>
 </html>

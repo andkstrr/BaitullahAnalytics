@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-5">
                 {{-- NAVIGASI & INFORMASI --}}
-                <div class="col-md-4">
+                <div class="col-md-4"  data-aos="fade-up" data-aos-duration="2000">
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #3C7447; opacity: 70%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="500">
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #205529; opacity: 80%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
@@ -37,8 +37,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #123419; opacity: 90%;"">
+                <div class="col-md-4"  data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
+                    <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #123419; opacity: 90%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
                                 <img src="{{ asset('assets/images/icon/Users Group White.png') }}" alt="Users Icon">
@@ -57,31 +57,41 @@
 
             <div class="row">
                 {{-- WAKTU & DURASI KUNJUNGAN --}}
-                <div class="col-md-6">
-                    <div class="card mb-5 pb-20 rounded-4 shadow-lg">
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1600">
+                    <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="card-header text-black">
                             <h5 class="fw-semibold fs-5">Waktu Kunjungan</h5>
                             <hr class="my-4">
-                        </div>
-                    </div>
-                    <div class="card mb-10 pb-20 rounded-4 shadow-lg">
-                        <div class="card-header text-black">
-                            <h5 class="fw-semibold fs-5">Durasi Kunjungan</h5>
-                            <hr class="my-4">
+                            <div class="card-body">
+                                {{-- CHART BAR WAKTU KUNJUNGAN --}}
+                                {{ $visitTimeChart->container() }}
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 {{-- KATEGORI PAKET --}}
-                <div class="col-md-6">
-                    <div class="card mb-5 pb-20 rounded-4 shadow-lg">
+                <div class="col-md-6"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1800">
+                    <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="card-header text-black">
                             <h5 class="fw-semibold fs-5">Kategori Paket</h5>
                             <hr class="my-4">
+                        </div>
+                        <div class="card-body">
+                            {{-- CHART PIE KATEGORI PAKET --}}
+                            {{ $categoryChart->container() }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="{{ $categoryChart->cdn() }}"></script>
+    <script src="{{ $visitTimeChart->cdn() }}"></script>
+    <script src="{{ $visitDurationChart->cdn() }}"></script>
+
+    {{ $categoryChart->script() }}
+    {{ $visitTimeChart->script() }}
+    {{ $visitDurationChart->script() }}
 @endsection
