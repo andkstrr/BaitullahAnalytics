@@ -12,8 +12,8 @@
                                 <img src="{{ asset('assets/images/icon/Users Group White.png') }}" alt="Users Icon">
                                 <h3 class="card-text fw-semibold fs-2 mb-0">1526</h3>
                                 <div class="d-flex justify-content-between">
-                                    <h5 class="card-title mb-0 fs-6 fw-normal">Total Pengunjung</h5>
-                                    <a href="{{ route('analytics.total_pengunjung') }}">
+                                    <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung</h5>
+                                    <a href="{{ route('analytics.pengunjung') }}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
                                     </a>
                                 </div>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2500" data-aos-delay="500">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #205529; opacity: 80%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
@@ -29,7 +29,7 @@
                                 <h3 class="card-text fw-semibold fs-2 mb-0">14</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung Aktif</h5>
-                                    <a href="{{ route('analytics.total_pengunjung_aktif') }}">
+                                    <a href="{{ route('analytics.pengunjung_aktif') }}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
                                     </a>
                                 </div>
@@ -37,7 +37,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4"  data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
+
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #123419; opacity: 90%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
@@ -57,7 +59,7 @@
 
             <div class="row">
                 {{-- WAKTU & DURASI KUNJUNGAN --}}
-                <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1600">
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
                     <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="card-header text-black">
                             <h5 class="fw-semibold fs-5">Waktu Kunjungan</h5>
@@ -71,7 +73,7 @@
                 </div>
 
                 {{-- KATEGORI PAKET --}}
-                <div class="col-md-6"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1800">
+                <div class="col-md-6"  data-aos="fade-up" data-aos-duration="2000" data-aos-delay="700">
                     <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="card-header text-black">
                             <h5 class="fw-semibold fs-5">Kategori Paket</h5>

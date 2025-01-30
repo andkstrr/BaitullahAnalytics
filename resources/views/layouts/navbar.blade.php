@@ -28,7 +28,7 @@
     {{-- NAVBAR --}}
     <nav class="navbar navbar-expand-lg sticky-top bg-white p-1 shadow-lg">
         <div class="container">
-            <a href="{{ route('analytics.dashboard') }}" class="navbar-brand">
+            <a href="{{ url()->previous() }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
             </a>
             <ul class="navbar-nav">
@@ -61,11 +61,11 @@
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.total_pengunjung') }}" class="nav-link text-black fs-6 fw-semibold">Total Pengunjung</a>
+                    <a href="{{ route('analytics.pengunjung') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.total_pengunjung_aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
+                    <a href="{{ route('analytics.pengunjung_aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-link"></i>
