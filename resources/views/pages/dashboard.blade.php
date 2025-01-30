@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-5">
                 {{-- NAVIGASI & INFORMASI --}}
-                <div class="col-md-4"  data-aos="fade-up" data-aos-duration="2000">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="2000">
                     <div class="card pt-7 mb-5 rounded-4 shadow-lg" style="background-color: #3C7447; opacity: 70%;">
                         <div class="card-body">
                             <div class="card-content text-white mt-10">
