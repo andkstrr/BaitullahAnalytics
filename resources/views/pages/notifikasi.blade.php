@@ -13,6 +13,7 @@
                             <table class="table table-hover align-middle">
                                 <tbody>
                                     @foreach (range(1, 3) as $item)
+                                    {{-- TABLE ROW PENGGUNA BARU --}}
                                     <tr>
                                         <div class="table-responsive">
                                             <td>
@@ -37,6 +38,8 @@
                                             </td>
                                         </div>
                                     </tr>
+                                    
+                                    {{-- TABLE ROW PEMBELIAN --}}
                                     <tr>
                                         <div class="table-responsive">
                                             <td>
