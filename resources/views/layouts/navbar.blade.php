@@ -28,10 +28,12 @@
     {{-- NAVBAR --}}
     <nav class="navbar navbar-expand-lg sticky-top bg-white p-1 shadow-lg">
         <div class="container">
-            <a href="{{ url()->previous() }}" class="navbar-brand">
+            <a href="{{ route('analytics.dashboard') }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
                 <div class=""></div>
             </a>
+
+            <!-- NOTIFIKASI & SIDEBAR -->
             <ul class="navbar-nav">
                 <li class="nav-item gap-3">
                     <a href="{{ route('analytics.notifikasi') }}" class="nav-link position-relative">
@@ -46,11 +48,6 @@
             </ul>
         </div>
     </nav>
-
-    {{-- BREADCRUMB --}}
-    <div class="container mt-5" data-aos="fade-down" data-aos-duration="2500">
-        @include('layouts.breadcrumb')
-    </div>
 
     <!-- SIDEBAR -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
@@ -67,11 +64,11 @@
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.pengunjung') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung</a>
+                    <a href="{{ route('analytics.pengunjung.all') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.pengunjung_aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
+                    <a href="{{ route('analytics.pengunjung.aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-link"></i>

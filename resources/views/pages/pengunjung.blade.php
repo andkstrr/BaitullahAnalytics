@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.breadcrumb')
 
 @section('content')
     <div class="background-section">
@@ -13,7 +13,7 @@
                             <div class="text-black p-3">
                                 <div class="card-title d-flex justify-content-between align-items-center">
                                     <h5 class="fw-semibold fs-6 text-muted">Total Pengunjung</h5>
-                                    <a href="{{ route('analytics.total_pengunjung') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
+                                    <a href="{{ route('analytics.pengunjung.total') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
                                 </div>
                                 <div class="card-content">
                                     {{-- TOTAL PENGUNJUNG --}}
@@ -33,7 +33,7 @@
                             <div class="text-black p-3">
                                 <div class="card-title d-flex justify-content-between align-items-center">
                                     <h5 class="fw-semibold fs-6 text-muted">Pengunjung Hari Ini</h5>
-                                    <a href="{{ route('analytics.pengunjung_hari_ini') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
+                                    <a href="{{ route('analytics.pengunjung.hari_ini') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
                                 </div>
                                 <div class="card-content">
                                     {{-- TOTAL PENGUNJUNG --}}
@@ -53,12 +53,12 @@
                             <div class="text-black p-3">
                                 <div class="card-title d-flex justify-content-between align-items-center">
                                     <h5 class="fw-semibold fs-6 text-muted">Pengunjung Sedang Aktif</h5>
-                                    <a href="{{ route('analytics.pengunjung_aktif') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
+                                    <a href="{{ route('analytics.pengunjung.aktif') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
                                 </div>
                                 <div class="card-content">
                                     {{-- TOTAL PENGUNJUNG --}}
                                     <h2 class="fw-normal fs-3 mb-3">5 Pengunjung</h2>
-                                    <a href="{{ route('analytics.pengunjung_aktif') }}" class="text-muted">Lihat di sini!</a>
+                                    <a href="{{ route('analytics.pengunjung.aktif') }}" class="text-muted">Lihat di sini!</a>
                                 </div>
                             </div>
                         </div>
@@ -221,9 +221,7 @@
         </div>
     </div>
 
-    <script src="{{ $deviceChart->cdn() }}"></script>
     <script src="{{ $visitorChart->cdn() }}"></script>
 
-    {{ $deviceChart->script() }}
     {{ $visitorChart->script() }}
 @endsection

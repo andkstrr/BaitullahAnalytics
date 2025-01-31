@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Charts\CategoryChart;
 use App\Charts\VisitTimeChart;
-use App\Charts\DeviceChart;
 use App\Charts\VisitorChart;
 use App\Charts\TotalVisitorChart;
 use App\Charts\VisitCompareChart;
@@ -21,10 +20,9 @@ class PageController extends Controller
         ]);
     }
 
-    public function pengunjung(DeviceChart $deviceChart, VisitorChart $visitorChart)
+    public function pengunjung(VisitorChart $visitorChart)
     {
         return view ('pages.pengunjung', [
-            'deviceChart' => $deviceChart->build(),
             'visitorChart' => $visitorChart->build()
         ]);
     }

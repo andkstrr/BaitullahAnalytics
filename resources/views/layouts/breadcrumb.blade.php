@@ -25,47 +25,48 @@
     <style></style>
 </head>
 <body style="background-color: #f1f1f1f1">
-    {{-- NAVBAR --}}
-    <nav class="navbar navbar-expand-lg sticky-top bg-white p-1 shadow-lg">
-        <div class="container">
-            <a href="" class="navbar-brand">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('analytics.dashboard') }}">Home</a></li>
-                        @php
-                            $segments = Request::segments();
-                            $url = '';
-                        @endphp
-                        @foreach ($segments as $segment)
-                            @php $url .= '/' . $segment; @endphp
-                            @if (!$loop->last)
-                                <li class="breadcrumb-item"><a href="{{ url($url) }}">{{ ucfirst($segment) }}</a></li>
-                            @else
-                                <li class="breadcrumb-item active" aria-current="page">{{ ucfirst($segment) }}</li>
-                            @endif
-                        @endforeach
-                    </ol>
-                </nav>
-            </a>
-            <ul class="navbar-nav">
-                <li class="nav-item gap-3">
+{{-- BREADCRUMB NAV --}}
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-lg p-1">
+        <div class="container d-flex justify-content-between align-items-center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="{{ route('analytics.dashboard') }}" class="text-decoration-none">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </li>
+                    @php
+                        $segments = Request::segments();
+                        $url = '';
+                    @endphp
+                    @foreach ($segments as $segment)
+                        @php $url .= '/' . $segment; @endphp
+                        @if (!$loop->last)
+                            <li class="breadcrumb-item">
+                                <a href="{{ url($url) }}" class="text-decoration-none fs-6">{{ ucfirst($segment) }}</a>
+                            </li>
+                        @else
+                            <li class="breadcrumb-item active" aria-current="page">{{ ucfirst($segment) }}</li>
+                        @endif
+                    @endforeach
+                </ol>
+            </nav>
+
+            <!-- NOTIFIKASI & SIDEBAR -->
+            <ul class="navbar-nav d-flex align-items-center">
+                <li class="nav-item position-relative gap-3">
                     <a href="{{ route('analytics.notifikasi') }}" class="nav-link position-relative">
                         {{-- JUMLAH NOTIFIKASI --}}
                         <span class="badge position-absolute top-0 end-0 text-bg-danger">5</span>
                         <span><i class="fa-regular fa-bell fa-xl" style="color: #000000;"></i></span>
                     </a>
-                    <a style="cursor: pointer" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                    <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
                         <img src="{{ asset('assets/images/icon/Burger Nav.jpg') }}" width="40" alt="Nav Burger">
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-
-    {{-- BREADCRUMB --}}
-    <div class="container mt-5" data-aos="fade-down" data-aos-duration="2500">
-        @include('layouts.breadcrumb')
-    </div>
 
     <!-- SIDEBAR -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
@@ -82,11 +83,11 @@
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.pengunjung') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung</a>
+                    <a href="{{ route('analytics.pengunjung.all') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-users-gear"></i>
-                    <a href="{{ route('analytics.pengunjung_aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
+                    <a href="{{ route('analytics.pengunjung.aktif') }}" class="nav-link text-black fs-6 fw-semibold">Pengunjung Aktif</a>
                 </li>
                 <li class="d-flex align-items-center mb-5 gap-5">
                     <i class="fa-solid fa-link"></i>

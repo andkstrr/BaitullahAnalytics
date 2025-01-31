@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.breadcrumb')
 
 @section('content')
     <div class="background-section">
@@ -38,7 +38,7 @@
                         <div class="card p-4 shadow-lg">
                             <p class="fw-semibold text-muted">Sedang Aktif</p>
                             <h2 class="fw-normal text-black">14</h2>
-                            <small><a href="{{ route('analytics.pengunjung_aktif') }}" class="text-muted">Lihat di sini</a></small>
+                            <small><a href="{{ route('analytics.pengunjung.aktif') }}" class="text-muted">Lihat di sini</a></small>
                         </div>
                     </div>
                     <div class="col-md-6 mb-3"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
@@ -54,12 +54,12 @@
                             <div class="text-black p-3">
                                 <div class="card-title d-flex justify-content-between align-items-center">
                                     <h5 class="fw-semibold fs-6 text-muted">Kunjungan</h5>
-                                    <a href="{{ route('analytics.pengunjung#history') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
+                                    <a href="{{ route('analytics.history') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
                                 </div>
                                 <div class="card-content">
                                     {{-- TOTAL PENGUNJUNG --}}
                                     <h2 class="fw-normal fs-3 mb-3">Aktivitas Terakhir</h2>
-                                    <a href="{{ route('analytics.pengunjung#history') }}" class="text-muted">Lihat di sini!</a>
+                                    <a href="{{ route('analytics.history') }}" class="text-muted">Lihat di sini!</a>
                                 </div>
                             </div>
                         </div>

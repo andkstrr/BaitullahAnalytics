@@ -13,7 +13,7 @@
                                 <h3 class="card-text fw-semibold fs-2 mb-0">1526</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung</h5>
-                                    <a href="{{ route('analytics.pengunjung') }}">
+                                    <a href="{{ route('analytics.pengunjung.all') }}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
                                     </a>
                                 </div>
@@ -29,7 +29,7 @@
                                 <h3 class="card-text fw-semibold fs-2 mb-0">14</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Pengunjung Sedang Aktif</h5>
-                                    <a href="{{ route('analytics.pengunjung_aktif') }}">
+                                    <a href="{{ route('analytics.pengunjung.aktif') }}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
                                     </a>
                                 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.breadcrumb')
 
 @section('content')
     <div class="background-section">
