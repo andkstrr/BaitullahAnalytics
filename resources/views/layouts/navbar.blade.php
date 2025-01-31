@@ -30,6 +30,7 @@
         <div class="container">
             <a href="{{ url()->previous() }}" class="navbar-brand">
                 <img src="{{ asset('assets/images/logo/Baitullah Analytics.png')}}" width="150" alt="Baitullah Analytics" />
+                <div class=""></div>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item gap-3">
@@ -45,6 +46,11 @@
             </ul>
         </div>
     </nav>
+
+    {{-- BREADCRUMB --}}
+    <div class="container mt-5" data-aos="fade-down" data-aos-duration="2500">
+        @include('layouts.breadcrumb')
+    </div>
 
     <!-- SIDEBAR -->
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">

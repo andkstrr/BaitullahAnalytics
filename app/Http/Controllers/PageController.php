@@ -8,6 +8,8 @@ use App\Charts\VisitTimeChart;
 use App\Charts\DeviceChart;
 use App\Charts\VisitorChart;
 use App\Charts\TotalVisitorChart;
+use App\Charts\VisitCompareChart;
+use App\Charts\TrafficChart;
 
 class PageController extends Controller
 {
@@ -27,16 +29,20 @@ class PageController extends Controller
         ]);
     }
 
-    public function total_pengunjung (TotalVisitorChart $totalVisitorChart)
+    public function total_pengunjung (TotalVisitorChart $totalVisitorChart, CategoryChart $categoryChart)
     {
         return view ('pages.total-pengunjung', [
-            'totalVisitorChart' => $totalVisitorChart->build()
+            'totalVisitorChart' => $totalVisitorChart->build(),
+            'categoryChart' => $categoryChart->build()
         ]);
     }
 
-    public function pengunjung_hari_ini()
+    public function pengunjung_hari_ini(VisitCompareChart $visitCompareChart, TrafficChart $trafficChart)
     {
-        return view ('pages.pengunjung-hari-ini');
+        return view ('pages.pengunjung-hari-ini', [
+            'visitCompare' => $visitCompareChart->build(),
+            'trafficChart' => $trafficChart->build()
+        ]);
     }
 
     public function pengunjung_aktif()

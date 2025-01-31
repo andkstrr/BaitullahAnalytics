@@ -41,6 +41,8 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+ini_set('memory_limit', '1024M');
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
