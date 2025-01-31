@@ -1,4 +1,5 @@
 <?php
+// view ('pages.dashboard)
 
 namespace App\Charts;
 

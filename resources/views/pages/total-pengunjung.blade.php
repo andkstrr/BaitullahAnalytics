@@ -53,13 +53,13 @@
                         <div class="card p-5 rounded-bottom-4 shadow-lg">
                             <div class="text-black p-3">
                                 <div class="card-title d-flex justify-content-between align-items-center">
-                                    <h5 class="fw-semibold fs-6 text-muted">Pengunjung Sedang Aktif</h5>
-                                    <a href="{{ route('analytics.pengunjung_aktif') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
+                                    <h5 class="fw-semibold fs-6 text-muted">Kunjungan</h5>
+                                    <a href="{{ route('analytics.pengunjung#history') }}"><i class="fa-solid fa-up-right-from-square" style="color: #868686"></i></a>
                                 </div>
                                 <div class="card-content">
                                     {{-- TOTAL PENGUNJUNG --}}
-                                    <h2 class="fw-normal fs-3 mb-3">5 Pengunjung</h2>
-                                    <a href="{{ route('analytics.pengunjung_aktif') }}" class="text-muted">Lihat di sini!</a>
+                                    <h2 class="fw-normal fs-3 mb-3">Aktivitas Terakhir</h2>
+                                    <a href="{{ route('analytics.pengunjung#history') }}" class="text-muted">Lihat di sini!</a>
                                 </div>
                             </div>
                         </div>

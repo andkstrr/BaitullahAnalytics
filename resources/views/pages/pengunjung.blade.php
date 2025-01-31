@@ -77,6 +77,7 @@
             </div>
         </div>
 
+        <div id="history"></div>
         {{-- TABLE HISTORY AKTIVITAS --}}
         <div class="container-fluid bg-white p-7 mx-4 shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
             <div class="table-header d-flex justify-content-between mb-8">
@@ -115,7 +116,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        @foreach (range(1, 3) as $item)
+                        @foreach (range(1, 10) as $item)
                             <tr>
                                 <td>
                                     <a href="#" class="text-black">Andika Satrio</a>

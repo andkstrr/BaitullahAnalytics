@@ -1,4 +1,5 @@
 <?php
+// view ('pages.total-pengunjung')
 
 namespace App\Charts;
 

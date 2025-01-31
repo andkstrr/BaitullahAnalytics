@@ -5,19 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Charts\CategoryChart;
 use App\Charts\VisitTimeChart;
-use App\Charts\VisitDurationChart;
 use App\Charts\DeviceChart;
 use App\Charts\VisitorChart;
 use App\Charts\TotalVisitorChart;
 
 class PageController extends Controller
 {
-    public function dashboard(CategoryChart $categoryChart, VisitTimeChart $visitTimeChart, VisitDurationChart $visitDurationChart)
+    public function dashboard(CategoryChart $categoryChart, VisitTimeChart $visitTimeChart)
     {
         return view('pages.dashboard', [
             'categoryChart' => $categoryChart->build(),
-            'visitTimeChart' => $visitTimeChart->build(),
-            'visitDurationChart' => $visitDurationChart->build()
+            'visitTimeChart' => $visitTimeChart->build()
         ]);
     }
 
@@ -44,6 +42,11 @@ class PageController extends Controller
     public function pengunjung_aktif()
     {
         return view ('pages.pengunjung-aktif');
+    }
+
+    public function history_pengunjung()
+    {
+        return view ('pages.pengunjung#history');
     }
 
     public function trafik_website()

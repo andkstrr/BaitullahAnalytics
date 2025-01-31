@@ -47,7 +47,7 @@
                                 <h3 class="card-text fw-semibold fs-2 mb-0">4</h3>
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title mb-0 fs-6 fw-normal">Sumber Lalu Lintas</h5>
-                                    <a href="#">
+                                    <a href="{{ route('analytics.trafik')}}">
                                         <i class="fa-solid fa-up-right-from-square" style="color: #d9d9d9"></i>
                                     </a>
                                 </div>
@@ -91,9 +91,7 @@
 
     <script src="{{ $categoryChart->cdn() }}"></script>
     <script src="{{ $visitTimeChart->cdn() }}"></script>
-    <script src="{{ $visitDurationChart->cdn() }}"></script>
 
     {{ $categoryChart->script() }}
     {{ $visitTimeChart->script() }}
-    {{ $visitDurationChart->script() }}
 @endsection
