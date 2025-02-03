@@ -18,7 +18,7 @@
                <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-6 mb-3"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
-                        <div class="card p-4 shadow-lg" style="border-top-left-radius: 0.75rem;">
+                        <div class="card p-4 mb-3 shadow-lg" style="border-top-left-radius: 0.75rem;">
                             <p class="fw-semibold text-muted">Terdaftar</p>
                             <h2 class="fw-normal text-black">1320</h2>
                             {{-- PLUS --}}
@@ -28,21 +28,21 @@
                         </div>
                     </div>
                     <div class="col-md-6 mb-3"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
-                        <div class="card p-4 shadow-lg" style="border-top-right-radius: 0.75rem;">
+                        <div class="card p-4 mb-3 shadow-lg" style="border-top-right-radius: 0.75rem;">
                             <p class="fw-semibold text-muted">Tidak Terdaftar</p>
                             <h2 class="fw-normal text-black">325</h2>
                             <small class="text-muted"><span class="text-danger">21.30% </span>Pengunjung</small>
                         </div>
                     </div>
                     <div class="col-md-6 mb-3"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="800">
-                        <div class="card p-4 shadow-lg">
+                        <div class="card p-4 mb-3 shadow-lg">
                             <p class="fw-semibold text-muted">Sedang Aktif</p>
                             <h2 class="fw-normal text-black">14</h2>
                             <small><a href="{{ route('analytics.pengunjung.aktif') }}" class="text-muted">Lihat di sini</a></small>
                         </div>
                     </div>
                     <div class="col-md-6 mb-3"  data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
-                        <div class="card p-4 shadow-lg">
+                        <div class="card p-4 mb-3 shadow-lg">
                             <p class="fw-semibold text-muted">Sumber Trafik</p>
                             <h2 class="fw-normal text-black">4</h2>
                             <small><a href="{{ route('analytics.trafik') }}" class="text-muted">Lihat di sini</a></small>

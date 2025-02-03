@@ -15,6 +15,5 @@ Route::prefix('/analytics')->name('analytics.')->group(function () {
         Route::get('/total Pengunjung', [PageController::class, 'total_pengunjung'])->name('total');
         Route::get('/pengunjung Hari Ini', [PageController::class, 'pengunjung_hari_ini'])->name('hari_ini');
         Route::get('/pengunjung Aktif', [PageController::class, 'pengunjung_aktif'])->name('aktif');
-        Route::get('/pengunjung#history', [PageController::class, 'history_pengunjung'])->name('history');
     });
 });

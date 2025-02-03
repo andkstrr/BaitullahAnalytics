@@ -66,7 +66,7 @@
                 </div>
 
                 {{-- RIGHT COLUMN --}}
-                <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
                     <div class="card mb-5 rounded-4 shadow-lg">
                         <div class="card-content p-2">
                             {{-- CHART PIE TOTAL PENGUNJUNG --}}
@@ -79,7 +79,7 @@
 
         <div id="history"></div>
         {{-- TABLE HISTORY AKTIVITAS --}}
-        <div class="container-fluid bg-white p-7 mx-4 shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
+        <div class="container-fluid bg-white p-7 mx-4 mt-10 shadow-lg rounded-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1000">
             <div class="table-header d-flex justify-content-between mb-8">
                 <h3 class="fw-semibold text-black">Aktivitas Terakhir</h3>
                 <div class="d-flex gap-3">
@@ -222,6 +222,8 @@
     </div>
 
     <script src="{{ $visitorChart->cdn() }}"></script>
+    <script src="{{ $visitTimeChart->cdn() }}"></script>
 
     {{ $visitorChart->script() }}
+    {{ $visitTimeChart->script()}}
 @endsection

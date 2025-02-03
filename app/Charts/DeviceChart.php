@@ -13,13 +13,11 @@ class DeviceChart
         $this->deviceChart = $deviceChart;
     }
 
-    public function build(): \ArielMejiaDev\LarapexCharts\BarChart
+    public function build(): \ArielMejiaDev\LarapexCharts\HorizontalBar
     {
-        return $this->deviceChart->barChart()
-            ->setXAxis(['Mobile', 'Tablet', 'Laptop', 'Dekstop'])
-            ->addData('Jumlah Kunjungan', [1500, 675, 1250, 865])
-            ->setColors(['#6F9677'])
-            ->setDataLabels(false)
-            ->setOptions(['width' => '100%', 'height' => 300]);
+        return $this->deviceChart->horizontalBarChart()
+            ->setColors(['#205529'])
+            ->addData('Perangkat Pengunjung', [925, 568, 750])
+            ->setXAxis(['Mobile', 'Tablet', 'Dekstop']);
     }
 }

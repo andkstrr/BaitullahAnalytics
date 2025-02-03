@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card mb-5 rounded-4 shadow-lg">
+                    <div class="card mb-5 rounded-4 shadow-lg" data-aos="fade-up" data-aos-duration="1700">
                         <div class="card-header text-black p-5 px-7 text-start">
                             <h5 class="fw-semibold fs-4">Notifikasi</h5>
                         </div>
@@ -38,7 +38,7 @@
                                             </td>
                                         </div>
                                     </tr>
-                                    
+
                                     {{-- TABLE ROW PEMBELIAN --}}
                                     <tr>
                                         <div class="table-responsive">

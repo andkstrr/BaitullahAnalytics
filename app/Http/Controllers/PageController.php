@@ -9,6 +9,7 @@ use App\Charts\VisitorChart;
 use App\Charts\TotalVisitorChart;
 use App\Charts\VisitCompareChart;
 use App\Charts\TrafficChart;
+use App\Charts\DeviceChart;
 
 class PageController extends Controller
 {
@@ -20,14 +21,15 @@ class PageController extends Controller
         ]);
     }
 
-    public function pengunjung(VisitorChart $visitorChart)
+    public function pengunjung(VisitorChart $visitorChart, VisitTimeChart $visitTimeChart)
     {
         return view ('pages.pengunjung', [
-            'visitorChart' => $visitorChart->build()
+            'visitorChart' => $visitorChart->build(),
+            'visitTimeChart' => $visitTimeChart->build()
         ]);
     }
 
-    public function total_pengunjung (TotalVisitorChart $totalVisitorChart, CategoryChart $categoryChart)
+    public function total_pengunjung(TotalVisitorChart $totalVisitorChart, CategoryChart $categoryChart)
     {
         return view ('pages.total-pengunjung', [
             'totalVisitorChart' => $totalVisitorChart->build(),
@@ -53,9 +55,11 @@ class PageController extends Controller
         return view ('pages.pengunjung#history');
     }
 
-    public function trafik_website()
+    public function trafik_website(DeviceChart $deviceChart)
     {
-        return view ('pages.trafik');
+        return view ('pages.trafik', [
+            'deviceChart' => $deviceChart->build()
+        ]);
     }
 
     public function notifikasi()
