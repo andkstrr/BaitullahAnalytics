@@ -1,4 +1,11 @@
-@extends('layouts.navbar')
+@extends('layouts.app')
+
+{{-- NAMA PAGE --}}
+@section('title', 'Notifikasi')
+
+{{-- NAMA APP/WEB ANALYTICS --}}
+@section('site-code-app', 'BCI')
+@section('app-name', 'baitullah.co.id')
 
 @section('content')
     <div class="background-section">

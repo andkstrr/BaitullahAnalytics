@@ -18,104 +18,9 @@
     {{-- AOS CSS --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    {{-- INTERNAL CSS --}}
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-        .sidebar {
-            width: 230px;
-            background-color: #F8F8F8;
-            padding: 20px;
-            transition: all 0.3s;
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            overflow-y: auto;
-        }
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 8px;
-            color: #555;
-            transition: 0.3s;
-            text-decoration: none; /* Remove underline from links */
-        }
-        .nav-link i {
-            margin-right: 10px;
-            width: 20px;
-            text-align: center;
-        }
-        .nav-link:hover {
-            background-color: #e0e7ff;
-            color: #053600;
-        }
-        .nav-link.active {
-            color: #053600;
-            font-weight: bold;
-            border-left: 4px solid #085000;
-            padding-left: 14px;
-        }
-        .search-box {
-            background-color: #F8F8F8;
-            width: 200px;
-        }
-        .search-box input {
-            border: none;
-            background: none;
-            outline: none;
-            width: 100%;
-            padding-left: 10px;
-        }
-        .search-box i { color: gray; }
-        .btn-time {
-            border-radius: 12px;
-            border: none;
-            border-color: gray;
-            background-color: white
-            outline: gray;
-            color: gray;
-            cursor: pointer;
-        }
-        .main-content {
-            flex: 1;
-            padding: 20px;
-            margin-left: 240px;
-            margin-right: 10px;
-            width: calc(100% - 260px);
-        }
-        .card { background-color: #fcfcfc; border: none; }
-        .toggle-btn { display: none; }
-        .text-gray { color: gray; }
-        .text-black { color: black; }
-        .text-plus { color: #00bd48}
-        .text-minus { color: rgb(218, 0, 0)}
-
-        @media (max-width: 1150px) {
-            .sidebar {
-                left: -260px;
-            }
-            .sidebar.active {
-                left: 0;
-            }
-            .toggle-btn {
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                font-size: 24px;
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-    </style>
+    {{-- STYLE CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 </head>
 <body>
     <button class="toggle-btn" id="menuToggle"><i class="fas fa-bars"></i></button>
@@ -135,9 +40,8 @@
             {{-- KATEGORI NAVIGASI ANALYTICS --}}
             <p class="fw-semibold fs-sm text-gray mt-8 px-2">Analytics</p>
             <ul class="nav flex-column gap-2">
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-th-large"></i>Dashboard</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-cogs"></i>Application</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-users"></i>Monitoring</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-cogs"></i>Application</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-chart-line"></i>Report</a></li>
             </ul>
         </div>
@@ -148,7 +52,7 @@
                 <div class="content-nav d-flex justify-content-between">
                     {{-- TITLE --}}
                     <div class="content-title d-flex align-items-end gap-3">
-                        <h2 class="fw-semibold fs-2 text-black">@yield('title')</h2>
+                        <h2 class="fw-semibold fs-2 text-black">@yield('title-page')</h2>
 
                         {{-- KATEGORI WAKTU --}}
                         <div class="dropdown">
@@ -193,6 +97,7 @@
     <script type="module" src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
