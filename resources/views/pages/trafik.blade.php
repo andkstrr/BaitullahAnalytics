@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6" data-aos="fade-up" data-aos-duration="1700" data-aos-delay="300">
-                            <div class="card p-4 mb-3 shadow-lg">
+                            <div class="card p-4 mb-3 shadow-lg" style="border-top-left-radius: 18px">
                                 <div class="card-content">
                                     <p class="text-muted fw-semibold fs-sm">Avg Time (m)</p>
                                     <div class="d-flex align-items-end gap-1">
@@ -97,7 +97,7 @@
                                         </div>
 
                                         <p class="progress-title">Dekstop</p>
-                                        <div class="progress mb-3" style="height: 20px;">
+                                        <div class="progress mb-3" style="height: 20px">
                                             <div class="progress-bar bg-success" role="progressbar"
                                              style="width: 30%;" aria-valuenow="" aria-valuemin="0">283</div>
                                         </div>

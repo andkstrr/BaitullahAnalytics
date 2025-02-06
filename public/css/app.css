@@ -1,0 +1,91 @@
+body {
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+}
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 20px;
+    transition: all 0.3s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    color: #555;
+    transition: 0.3s;
+}
+.nav-link i {
+    margin-right: 10px;
+}
+.nav-link:hover {
+    background-color: #e0e7ff;
+    color: #074900;
+}
+.nav-link.active {
+    background-color: #074900;
+    color: white;
+}
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.search-box {
+    background-color: #f1f1f1;
+    width: 200px;
+}
+.search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    padding-left: 10px;
+}
+.search-box i {
+    color: gray;
+}
+.btn-time {
+    border-radius: 8px;
+    border-color: gray;
+    outline: gray;
+    color: gray;
+    cursor: pointer;
+}
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+.toggle-btn {
+    display: none;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        left: -260px;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .toggle-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
