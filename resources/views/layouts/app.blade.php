@@ -33,16 +33,50 @@
             {{-- KATEGORI NAVIGASI GENERAL --}}
             <p class="fw-semibold fs-sm text-gray mt-7 px-2">General</p>
             <ul class="nav flex-column gap-2">
-                <li class="nav-item"><a href="{{ route('BCI.analytics.dashboard') }}" class="nav-link active"><i class="fas fa-th-large"></i>Dashboard</a></li>
-                <li class="nav-item"><a href="{{ route('BCI.analytics.notifikasi') }}" class="nav-link text-gray"><i class="fas fa-bell"></i>Notification</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('BCI.analytics.dashboard') }}" class="nav-link {{ request()->routeIs('BCI.analytics.dashboard') ? 'active' : '' }}">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bell"></i> Notification
+                    </a>
+                </li>
             </ul>
 
             {{-- KATEGORI NAVIGASI ANALYTICS --}}
             <p class="fw-semibold fs-sm text-gray mt-8 px-2">Analytics</p>
             <ul class="nav flex-column gap-2">
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-users"></i>Monitoring</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-cogs"></i>Application</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-chart-line"></i>Report</a></li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <!-- MONITORING -->
+                        <a href="{{ route('BCI.analytics.monitoring.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.dashboard') ? 'active' : '' }}">
+                            <i class="fas fa-users"></i> Monitoring
+                        </a>
+                        <!-- DROPDOWN -->
+                        <button class="btn btn-link text-gray p-0" type="button" data-bs-toggle="collapse" data-bs-target="#monitoringSubmenu" aria-expanded="false">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <!-- SUBMENU DROPDOWN -->
+                    <div class="collapse" id="monitoringSubmenu">
+                        <ul class="nav flex-column ps-5">
+                            <li class="nav-item">
+                                <a class="nav-link mb-2 text-gray {{ request()->routeIs('BCI.analytics.monitoring.users') ? 'active' : '' }}" href="{{ route('BCI.analytics.monitoring.users') }}">
+                                    Users
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.pages') ? 'active' : '' }}" href="{{ route('BCI.analytics.monitoring.pages') }}">
+                                    Pages
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-cogs"></i> Application</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-chart-line"></i> Report</a></li>
             </ul>
         </div>
 
@@ -60,9 +94,9 @@
                               This Month
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                              <li><a class="dropdown-item text-black" href="#">1 Bulan Terakhir</a></li>
-                              <li><a class="dropdown-item text-black" href="#">3 Bulan Terakhir</a></li>
-                              <li><a class="dropdown-item text-black" href="#">1 Tahun Terakhir</a></li>
+                              <li><a class="dropdown-item text-black" href="#">Last Month</a></li>
+                              <li><a class="dropdown-item text-black" href="#">3 Months</a></li>
+                              <li><a class="dropdown-item text-black" href="#">Last Year</a></li>
                             </ul>
                         </div>
                     </div>
@@ -94,11 +128,46 @@
         </div>
     </div>
 
-    <script type="module" src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownId = "monitoringSubmenu";
+            const dropdown = document.getElementById(dropdownId);
+            const toggleButton = document.querySelector(`[data-bs-target="#${dropdownId}"]`);
+            const icon = toggleButton.querySelector("i");
+
+            // Cek apakah dropdown terbuka sebelumnya
+            if (localStorage.getItem(dropdownId) === "open") {
+                let bsCollapse = new bootstrap.Collapse(dropdown, { toggle: false });
+                bsCollapse.show();
+                toggleButton.setAttribute("aria-expanded", "true");
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
+            }
+
+            // Update icon dan simpan status ke localStorage saat dropdown dibuka
+            dropdown.addEventListener("shown.bs.collapse", function () {
+                localStorage.setItem(dropdownId, "open");
+                toggleButton.setAttribute("aria-expanded", "true");
+                icon.classList.remove("fa-chevron-down");
+                icon.classList.add("fa-chevron-up");
+            });
+
+            // Update icon dan simpan status ke localStorage saat dropdown ditutup
+            dropdown.addEventListener("hidden.bs.collapse", function () {
+                localStorage.setItem(dropdownId, "closed");
+                toggleButton.setAttribute("aria-expanded", "false");
+                icon.classList.remove("fa-chevron-up");
+                icon.classList.add("fa-chevron-down");
+            });
+        });
+    </script>
+
+
     <script>
         AOS.init();
     </script>

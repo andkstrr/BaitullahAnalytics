@@ -7,7 +7,7 @@
 @section('content')
     {{-- SECTION 1 --}}
     <div class="d-flex flex-column flex-lg-row gap-6 mt-6">
-        {{-- CARDS --}}
+        {{-- LEFT COL --}}
         <div class="flex-grow-1">
             <h6 class="section-title fw-semisemibold text-black fs-5 mt-7">Overview</h6>
             <div class="row mt-4">
@@ -38,44 +38,22 @@
             </div>
         </div>
 
-        {{-- TOTAL ALL USERS CARD --}}
+        {{-- RIGHT COL --}}
         <div class="col-12 col-lg-4 mt-9">
-            <div class="card shadow p-4 rounded-3">
-                <div class="card-title px-1">
-                    <h6 class="text-gray">Total All Users</h6>
-                    <ul class="nav nav-pills mb-3" id="userTabs">
-                        <li class="nav-item">
-                            <button class="nav-link active text-black px-2 py-1" data-bs-toggle="tab" data-bs-target="#daily">Daily</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link text-black px-2 py-1" data-bs-toggle="tab" data-bs-target="#monthly">Monthly</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link text-black px-2 py-1" data-bs-toggle="tab" data-bs-target="#yearly">Yearly</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="card-content p-2">
-                    <div class="tab-content text-black">
-                        @foreach ([
-                            'daily' => '4678',
-                            'monthly' => '15,2K',
-                            'yearly' => '120,5K'
-                        ] as $key => $value)
-                            <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }} text-center" id="{{ $key }}">
-                                <h1 class="fw-semibold display-2 text-black">{{ $value }}<span class="fs-5 text-gray"> User</span></h1>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="card-end">
-                    <p class="text-black fw-normal mt-5 mb-0">
-                        <span class="text-plus fw-semisemibold fs-5">
-                            <i class="fa-solid fa-arrow-trend-up"></i> +40.12%
-                        </span> than last week
-                    </p>
-                </div>
-            </div>
+            {{-- TOTAL ALL USERS CARD --}}
+            <x-tab-content
+                title="Users"
+                object="User"
+                :tabs="[
+                    'Daily' => ['label' => 'Daily', 'value' => '1,403'],
+                    'Monthly' => ['label' => 'Monthly', 'value' => '18,3K'],
+                    'Yearly' => ['label' => 'Yearly', 'value' => '520K'],
+                ]"
+                :percentages="[
+                    'unread' => '+5.12%',
+                    'read' => '+12.30%',
+                ]"
+            />
         </div>
     </div>
 
@@ -200,6 +178,7 @@
                                     size: 14, // Ukuran font label y
                                     family: 'Arial' // Contoh font, ganti sesuai keinginan
                                 },
+                                stepSize: 1000,
                                 color: '#333' // Warna label y lebih gelap
                             }
                         }

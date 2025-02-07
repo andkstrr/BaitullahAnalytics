@@ -9,4 +9,19 @@ class PageController extends Controller
     {
         return view('pages.BCI.dashboard');
     }
+
+    public function monitoring()
+    {
+        return view('pages.BCI.monitoring');
+    }
+
+    public function monitoring_users()
+    {
+        return view('pages.BCI.users');
+    }
+
+    public function monitoring_pages()
+    {
+        return view('pages.BCI.pages');
+    }
 }

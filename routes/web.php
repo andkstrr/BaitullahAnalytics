@@ -9,7 +9,11 @@ Route::get('/', [PageController::class, 'app'])->name('home');
 Route::prefix('/BCI')->name('BCI.')->group(function () {
     Route::prefix('/analytics')->name('analytics.')->group(function () {
         Route::get('/', [PageController::class, 'dashboardBCI'])->name('dashboard');
-        Route::get('/notifikasi', [PageController::class, 'notifikasi'])->name('notifikasi');
+        Route::prefix('/monitoring')->name('monitoring.')->group(function () {
+            Route::get('/', [PageController::class, 'monitoring'])->name('dashboard');
+            Route::get('/users', [PageController::class, 'monitoring_users'])->name('users');
+            Route::get('/pages', [PageController::class, 'monitoring_pages'])->name('pages');
+        });
     });
 });
 
