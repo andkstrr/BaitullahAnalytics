@@ -35,7 +35,7 @@
     <div class="card-end">
         <p class="text-black fw-normal mt-5 mb-0">
             <span class="text-plus fw-semisemibold fs-5">
-                <i class="fa-solid fa-arrow-trend-up"></i>
+                <i class="fa-solid fa-angles-up "></i>
                 <span x-text="percentages[activeTab] ?? '0%'"></span>
             </span> than last week
         </p>

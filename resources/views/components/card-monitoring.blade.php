@@ -9,7 +9,7 @@
         <h4 class="fw-semibold display-6 text-black">{{ $value }}</h4>
         <p class="text-black fs-sm fw-normal mb-0">
             <span class="text-plus fw-semibold">
-                <i class="fa-solid fa-circle-plus"></i> {{ $percentage ?? '0%' }}
+                <i class="fa-solid fa-angles-up"></i> {{ $percentage ?? '0%' }}
             </span> vs last month
         </p>
     </div>

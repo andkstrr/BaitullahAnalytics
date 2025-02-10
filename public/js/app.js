@@ -6,17 +6,32 @@ document.getElementById('menuToggle').addEventListener('click', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdownId = "monitoringSubmenu"; // ID dropdown
+    const dropdownId = "monitoringSubmenu";
     const dropdown = document.getElementById(dropdownId);
     const toggleButton = document.querySelector(`[data-bs-target="#${dropdownId}"]`);
+    const monitoringIcon = document.getElementById("monitoringIcon");
 
-    // Cek apakah dropdown sebelumnya terbuka di localStorage
+    // Icon awal (pastikan di HTML juga fa-solid fa-folder)
+    // monitoringIcon.classList.add("fa-solid", "fa-folder"); // Tidak perlu lagi karena sudah di HTML
+
+    toggleButton.addEventListener("click", function () {
+        if (dropdown.classList.contains("show")) {
+            monitoringIcon.classList.remove("fa-solid", "fa-folder-open");
+            monitoringIcon.classList.add("fa-solid", "fa-folder");
+        } else {
+            monitoringIcon.classList.remove("fa-solid", "fa-folder");
+            monitoringIcon.classList.add("fa-solid", "fa-folder-open");
+        }
+    });
+
+    // Local Storage (opsional, tapi disarankan)
     if (localStorage.getItem(dropdownId) === "open") {
         dropdown.classList.add("show");
         toggleButton.setAttribute("aria-expanded", "true");
+        monitoringIcon.classList.remove("fa-solid", "fa-folder");
+        monitoringIcon.classList.add("fa-solid", "fa-folder-open");
     }
 
-    // Simpan status dropdown ke localStorage saat diklik
     toggleButton.addEventListener("click", function () {
         if (dropdown.classList.contains("show")) {
             localStorage.setItem(dropdownId, "closed");

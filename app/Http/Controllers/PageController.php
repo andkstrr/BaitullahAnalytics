@@ -20,8 +20,8 @@ class PageController extends Controller
         return view('pages.BCI.users');
     }
 
-    public function monitoring_pages()
+    public function monitoring_application()
     {
-        return view('pages.BCI.pages');
+        return view('pages.BCI.application');
     }
 }

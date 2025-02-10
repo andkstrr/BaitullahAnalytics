@@ -34,12 +34,12 @@
             <p class="fw-semibold fs-sm text-gray mt-7 px-2">General</p>
             <ul class="nav flex-column gap-2">
                 <li class="nav-item">
-                    <a href="{{ route('BCI.analytics.dashboard') }}" class="nav-link {{ request()->routeIs('BCI.analytics.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('BCI.analytics.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.dashboard') ? 'active' : '' }}">
                         <i class="fas fa-th-large"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link text-gray">
                         <i class="fas fa-bell"></i> Notification
                     </a>
                 </li>
@@ -52,10 +52,10 @@
                     <div class="d-flex align-items-center">
                         <!-- MONITORING -->
                         <a href="{{ route('BCI.analytics.monitoring.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.dashboard') ? 'active' : '' }}">
-                            <i class="fas fa-users"></i> Monitoring
+                            <i class="far fa-folder-open"></i> Monitoring
                         </a>
                         <!-- DROPDOWN -->
-                        <button class="btn btn-link text-gray p-0" type="button" data-bs-toggle="collapse" data-bs-target="#monitoringSubmenu" aria-expanded="false">
+                        <button class="btn btn-link text-gray ps-7" type="button" data-bs-toggle="collapse" data-bs-target="#monitoringSubmenu" aria-expanded="false">
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
@@ -64,18 +64,17 @@
                         <ul class="nav flex-column ps-5">
                             <li class="nav-item">
                                 <a class="nav-link mb-2 text-gray {{ request()->routeIs('BCI.analytics.monitoring.users') ? 'active' : '' }}" href="{{ route('BCI.analytics.monitoring.users') }}">
-                                    Users
+                                    <i class="fa-solid fa-users-gear"></i> Users
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.pages') ? 'active' : '' }}" href="{{ route('BCI.analytics.monitoring.pages') }}">
-                                    Pages
+                                <a class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.application') ? 'active' : '' }}" href="{{ route('BCI.analytics.monitoring.application') }}">
+                                    <i class="fas fa-cogs"></i> Application
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-cogs"></i> Application</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fas fa-chart-line"></i> Report</a></li>
             </ul>
         </div>
