@@ -13,27 +13,27 @@
             <div class="row mt-4">
                 {{-- CARD --}}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <x-card-dashboard title="Audience" value="1,500" percentage="12%"></x-card-dashboard>
+                    <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
                 </div>
 
                 {{-- CARD --}}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <x-card-dashboard title="Visitors" value="1,500" percentage="12%"></x-card-dashboard>
+                    <x-dashboard-card title="Visitors" value="1,500" percentage="12%" />
                 </div>
 
                 {{-- CARD --}}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <x-card-dashboard title="Merchant" value="1,500" percentage="12%"></x-card-dashboard>
+                    <x-dashboard-card title="Merchant" value="1,500" percentage="12%" />
                 </div>
 
                 {{-- CARD --}}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <x-card-dashboard title="Page Views" value="1,500" percentage="12%"></x-card-dashboard>
+                    <x-dashboard-card title="Page Views" value="1,500" percentage="12%" />
                 </div>
 
                 {{-- CARD --}}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <x-card-dashboard title="Traffic" value="1,500" percentage="12%"></x-card-dashboard>
+                    <x-dashboard-card title="Traffic" value="1,500" percentage="12%" />
                 </div>
             </div>
         </div>

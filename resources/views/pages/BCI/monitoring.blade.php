@@ -13,19 +13,19 @@
     <div class="row mt-4">
         {{-- CARD --}}
         <div class="col-12 col-sm-6 col-lg-3">
-            <x-card-monitoring icon="fa-user" title="Total Visitors" value="1,500" percentage="12%"></x-card-monitoring>
+            <x-monitoring-card icon="fa-user" title="Total Visitors" value="1,500" percentage="12%" />
         </div>
         {{-- CARD --}}
         <div class="col-12 col-sm-6 col-lg-3">
-            <x-card-monitoring icon="fa-cart-shopping" title="Visitor is Active" value="1,500" percentage="12%"></x-card-monitoring>
+            <x-monitoring-card icon="fa-cart-shopping" title="Visitor is Active" value="1,500" percentage="12%" />
         </div>
         {{-- CARD --}}
         <div class="col-12 col-sm-6 col-lg-3">
-            <x-card-monitoring icon="fa-user" title="Total Visitors" value="1,500" percentage="12%"></x-card-monitoring>
+            <x-monitoring-card icon="fa-user" title="Total Visitors" value="1,500" percentage="12%" />
         </div>
         {{-- CARD --}}
         <div class="col-12 col-sm-6 col-lg-3">
-            <x-card-monitoring icon="fa-cart-shopping" title="Visitor is Active" value="1,500" percentage="12%"></x-card-monitoring>
+            <x-monitoring-card icon="fa-cart-shopping" title="Visitor is Active" value="1,500" percentage="12%" />
         </div>
     </div>
 

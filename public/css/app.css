@@ -32,6 +32,7 @@ body {
 }
 .nav-link.active {
     color: #053600;
+    background-color: #efefef;
     font-weight: bold;
     border-left: 4px solid #085000;
     padding-left: 14px;
@@ -81,13 +82,10 @@ body {
     align-items: center;
     background-color: #05360086;
 }
-#userChart {
-    filter: drop-shadow(0px 50px 20px #085000);
-}
 .card { background-color: #fcfcfc; border: none; }
 .toggle-btn { display: none; }
+.bg-gray { background-color: #fff; }
 .text-gray { color: gray; }
 .text-black { color: black; }
 .text-plus { color: #00bd48}
 .text-minus { color: rgb(218, 0, 0)}
-

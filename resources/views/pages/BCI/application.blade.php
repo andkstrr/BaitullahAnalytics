@@ -17,7 +17,7 @@
                     <h5 class="fw-semibold fs-5 text-black">Page Views</h5>
                     <div class="value mt-3">
                         <h2 class="fw-medium display-4 text-black">1,500</h2>
-                        <p class="text-black fs-sm fw-normal mb-0">
+                        <p class="text-black fs-6 fw-normal mb-0">
                             <span class="text-plus fw-semibold">
                                 <i class="fa-solid fa-angles-up"></i> {{ $percentage ?? '0%' }}
                             </span> more than yesterday
@@ -26,43 +26,16 @@
                 </div><hr>
                 <div class="card-content px-4 py-4">
                     {{-- ITEM 1 --}}
-                    <div class="item">
-                        <div class="d-flex justify-content-between">
-                            <div class="item d-flex align-items-center gap-2 mb-3">
-                                <div class="icon-container"><i class="fas fa-user fa-sm"></i></div>
-                                <h6 class="text-black fw-semibold fs-sm mb-0">Users</h6>
-                            </div>
-                            <p class="text-plus">
-                                <i class="fa-solid fa-angles-up"></i> 5300
-                            </p>
-                        </div>
-                    </div>
+                    <x-application-statisctic />
 
                     {{-- ITEM 2 --}}
-                    <div class="item">
-                        <div class="d-flex justify-content-between">
-                            <div class="item d-flex align-items-center gap-2 mb-3">
-                                <div class="icon-container"><i class="fas fa-user fa-sm"></i></div>
-                                <h6 class="text-black fw-semibold fs-sm mb-0">Users</h6>
-                            </div>
-                            <p class="text-plus">
-                                <i class="fa-solid fa-angles-up"></i> 5300
-                            </p>
-                        </div>
-                    </div>
+                    <x-application-statisctic />
 
                     {{-- ITEM 3 --}}
-                    <div class="item">
-                        <div class="d-flex justify-content-between">
-                            <div class="item d-flex align-items-center gap-2 mb-3">
-                                <div class="icon-container"><i class="fas fa-user fa-sm"></i></div>
-                                <h6 class="text-black fw-semibold fs-sm mb-0">Users</h6>
-                            </div>
-                            <p class="text-plus">
-                                <i class="fa-solid fa-angles-up"></i> 5300
-                            </p>
-                        </div>
-                    </div>
+                    <x-application-statisctic />
+
+                    {{-- ITEM 4 --}}
+                    <x-application-statisctic />
                 </div>
             </div>
         </div>
@@ -75,76 +48,49 @@
                     <h5 class="fw-semibold fs-5 text-black">Activities</h5>
                 </div>
                 <div class="card content">
-                    <div>
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="card bg-white p-4 rounded-3 shadow">
-                                    <div class="card-content d-flex align-items-start gap-3">
-                                        <div class="icon-container mt-2">
-                                            <i class="fas fa-user fa-sm"></i>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card content">
+                                <div class="row">
+                                    <div class="col-6 col-sm-6 col-md-3">
+                                        <x-application-card />
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-3">
+                                        <x-application-card />
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-3">
+                                        <x-application-card />
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-3">
+                                        <x-application-card />
+                                    </div>
+                                </div>
+
+                                <div class="row mt-6">
+                                    <div class="col-12 col-md-3">
+                                        <div class="chart-container">
+                                            <canvas id="appChart" style="height: 179px;"></canvas>
                                         </div>
-                                        <div>
-                                            <h5 class="text-black fs-2 fw-semibold mb-0">234</h5>
-                                            <p class="fs-6 fw-normal text-black mb-0">Users</p>
+                                    </div>
+
+                                    <div class="col-12 col-md-9">
+                                        <div class="progress-container mt-5">
+                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="bg-success" value="234" />
+                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="bg-warning" value="550" />
+                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="null" value="350" />
+                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="bg-secondary" value="798" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="card bg-white p-4 rounded-3 shadow">
-                                    <div class="card-content d-flex align-items-start gap-3">
-                                        <div class="icon-container mt-2">
-                                            <i class="fas fa-user fa-sm"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-black fs-2 fw-semibold mb-0">234</h5>
-                                            <p class="fs-6 fw-normal text-black mb-0">Users</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="card bg-white p-4 rounded-3 shadow">
-                                    <div class="card-content d-flex align-items-start gap-3">
-                                        <div class="icon-container mt-2">
-                                            <i class="fas fa-user fa-sm"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-black fs-2 fw-semibold mb-0">234</h5>
-                                            <p class="fs-6 fw-normal text-black mb-0">Users</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3">
-                                <div class="card bg-white p-4 rounded-3 shadow">
-                                    <div class="card-content d-flex align-items-start gap-3">
-                                        <div class="icon-container mt-2">
-                                            <i class="fas fa-user fa-sm"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-black fs-2 fw-semibold mb-0">234</h5>
-                                            <p class="fs-6 fw-normal text-black mb-0">Users</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between mt-5">
-                        <div class="chart" style="height: 200px; width: 150px">
-                            <canvas id="appChart"></canvas>
-                        </div>
-                        <div class="bar">
-                            <canvas id="barChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <script>
+        // CHART DOUGHNUT
         document.addEventListener('DOMContentLoaded', function () {
 
         const cbu = document.getElementById('appChart').getContext('2d');
@@ -154,17 +100,12 @@
           data: {
             datasets: [{
               label: 'Customer Satisfaction',
-              data: [30, 25, 10, 15], // Contoh data persentase
+              data: [30, 15, 10], // data persentase
               backgroundColor: [
-                '#91CC75', // CHROME
-                '#73C0DE', // Kuning
-                '#FAC858', // Merah
-                '#EE6666'  // Hijau
+                '#206400',
+                '#b98a00',
+                '#998a5f',
               ],
-              borderColor: [
-                '#FDFDFD'
-              ],
-              borderWidth: 3
             }]
           },
           options: {
@@ -172,10 +113,6 @@
             maintainAspectRatio: false, // Memungkinkan pengaturan aspek rasio
             cutoutPercentage: 50, // Mengatur ukuran lubang di tengah doughnut
             plugins: {
-              legend: {
-                display: true, // Menampilkan legenda
-                position: 'bottom' // Posisi legenda di bawah chart
-              },
               tooltip: {
                 callbacks: {
                   label: function(context) {
