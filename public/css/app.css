@@ -82,6 +82,7 @@ body {
     align-items: center;
     background-color: #05360086;
 }
+
 .card { background-color: #fcfcfc; border: none; }
 .toggle-btn { display: none; }
 .bg-gray { background-color: #fff; }

@@ -19,7 +19,7 @@
                         <h2 class="fw-medium display-4 text-black">1,500</h2>
                         <p class="text-black fs-6 fw-normal mb-0">
                             <span class="text-plus fw-semibold">
-                                <i class="fa-solid fa-angles-up"></i> {{ $percentage ?? '0%' }}
+                                <i class="fas fa-angles-up"></i> {{ $percentage ?? '0%' }}
                             </span> more than yesterday
                         </p>
                     </div>
@@ -75,10 +75,10 @@
 
                                     <div class="col-12 col-md-9">
                                         <div class="progress-container mt-5">
-                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="bg-success" value="234" />
-                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="bg-warning" value="550" />
-                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="null" value="350" />
-                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="bg-secondary" value="798" />
+                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="036222" value="234" />
+                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="01A23B" value="550" />
+                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="68DA6B" value="350" />
+                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="79CB79" value="798" />
                                         </div>
                                     </div>
                                 </div>
@@ -102,9 +102,9 @@
               label: 'Customer Satisfaction',
               data: [30, 15, 10], // data persentase
               backgroundColor: [
-                '#206400',
-                '#b98a00',
-                '#998a5f',
+                '#036222',
+                '#01A23B',
+                '#79CB79',
               ],
             }]
           },

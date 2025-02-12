@@ -10,6 +10,11 @@ class PageController extends Controller
         return view('pages.BCI.dashboard');
     }
 
+    public function notification()
+    {
+        return view('pages.BCI.notification');
+    }
+
     public function monitoring()
     {
         return view('pages.BCI.monitoring');
@@ -23,5 +28,10 @@ class PageController extends Controller
     public function monitoring_application()
     {
         return view('pages.BCI.application');
+    }
+
+    public function report()
+    {
+        return view('pages.BCI.report');
     }
 }

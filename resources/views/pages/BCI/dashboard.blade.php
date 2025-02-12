@@ -59,19 +59,17 @@
 
     {{-- SECTION 2 --}}
     <div class="row mt-9 mb-9">
-        <div class="col-12 col-md-6 col-lg-8 mb-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 mb-4">
             <div class="card rounded-3 shadow">
                 <div class="card-title px-4 pt-4">
-                    <p class="fw-semibold text-gray fs-6 mb-0">Chart</p>
+                    <p class="fw-semibold text-gray fs-6 mb-0">Activities</p>
                 </div>
                 <div class="card-content p-6 mb-5">
-                    <div style="width: 100%; height: 263px;">
-                        <canvas id="userChart"></canvas>
-                    </div>
+                    <x-line-chart />
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="col-12 col-md-12 col-lg-4 mb-4">
             <div class="card rounded-3 shadow">
                 <div class="card-title text-center px-4 pt-4">
                     <p class="fw-semibold text-gray fs-6 mb-0">Browser Usage</p>
@@ -86,7 +84,6 @@
     </div>
 
     <script>
-        // PIE CHART
         document.addEventListener('DOMContentLoaded', function () {
           const cbu = document.getElementById('browserUsage').getContext('2d');
 
@@ -96,12 +93,12 @@
               labels: ['Chrome', 'Edge', 'Firefox', 'Other'],
               datasets: [{
                 label: 'Customer Satisfaction',
-                data: [30, 25, 10, 15], // Contoh data persentase
+                data: [30, 25, 10, 15],
                 backgroundColor: [
-                  '#91CC75', // CHROME
-                  '#73C0DE', // Kuning
-                  '#FAC858', // Merah
-                  '#EE6666'  // Hijau
+                  '#036222',
+                  '#01A23B',
+                  '#68DA6B',
+                  '#79CB79'
                 ],
                 borderColor: [
                   '#FDFDFD'
@@ -110,13 +107,13 @@
               }]
             },
             options: {
-              responsive: true, // Membuat chart responsif
-              maintainAspectRatio: false, // Memungkinkan pengaturan aspek rasio
-              cutoutPercentage: 50, // Mengatur ukuran lubang di tengah doughnut
+              responsive: true,
+              maintainAspectRatio: false,
+              cutoutPercentage: 50, // ukuran lubang di tengah doughnut
               plugins: {
                 legend: {
-                  display: true, // Menampilkan legenda
-                  position: 'bottom' // Posisi legenda di bawah chart
+                  display: true,
+                  position: 'bottom'
                 },
                 tooltip: {
                   callbacks: {
@@ -130,66 +127,6 @@
               }
             }
           });
-        });
-
-       // LINE CHART
-        document.addEventListener('DOMContentLoaded', function () {
-            const clu = document.getElementById('userChart');
-
-            new Chart(clu, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [{
-                        label: 'Sales',
-                        data: [2000, 1800, 1900, 2100, 2500, 2300, 2600, 2500, 2800, 3400, 3000, 3200],
-                        borderColor: '#206400', // Warna garis hijau
-                        borderWidth: 3, // Ketebalan garis lebih tebal
-                        pointBackgroundColor: 'white', // Warna titik putih
-                        pointBorderColor: '#085000', // Warna border titik biru
-                        pointRadius: 2, // Ukuran titik
-                        fill: false,
-                        tension: 0.4,
-                        lineCap: 'round' // Ujung garis membulat
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                font: {
-                                    size: 14, // Ukuran font label x
-                                    family: 'Arial' // Contoh font, ganti sesuai keinginan
-                                },
-                                color: '#333' // Warna label x lebih gelap
-                            }
-                        },
-                        y: {
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                font: {
-                                    size: 14, // Ukuran font label y
-                                    family: 'Arial' // Contoh font, ganti sesuai keinginan
-                                },
-                                stepSize: 1000,
-                                color: '#333' // Warna label y lebih gelap
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
-                }
-            });
         });
     </script>
 @endsection

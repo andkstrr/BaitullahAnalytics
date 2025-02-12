@@ -8,86 +8,26 @@
     {{-- SECTION 1 --}}
     <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6>
     <div class="row mt-4">
-        {{-- LEFT COL --}}
         <div class="col-12 col-sm-6 col-md-4">
-            {{-- CARD --}}
-            <div class="card rounded-3 shadow">
-                <div class="card-title px-4 pt-4">
-                    <h5 class="fw-semibold fs-sm text-gray">Today's</h5>
-                    <h5 class="fw-semibold fs-5 text-black">Total Users</h5>
-                    <div class="value mt-3">
-                        <h2 class="fw-medium display-4 text-black">1,500</h2>
-                        <p class="text-black fs-6 fw-normal mb-0">
-                            <span class="text-plus fw-semibold">
-                                <i class="fa-solid fa-angles-up"></i> {{ $percentage ?? '0%' }}
-                            </span> more than yesterday
-                        </p>
-                    </div>
-                </div><hr>
-                <div class="card-content px-4 py-4">
-                    {{-- ITEM 1 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 2 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 3 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 4 --}}
-                    <x-application-statisctic />
-                </div>
-            </div>
+            <x-monitoring-card icon="fa-user" title="Total Visitors" href="" icon="fa-up-right-from-square" value="376K" content="" percentage="12%" />
         </div>
 
-        {{-- RIGHT COL --}}
-        <div class="col-12 col-sm-6 col-md-8">
-            <div class="card p-4 rounded-3 shadow">
-                <div class="card-title">
-                    <h5 class="fw-semibold fs-sm text-gray">Today's</h5>
-                    <h5 class="fw-semibold fs-5 text-black">Activities</h5>
-                </div>
-                <div class="card content">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card content">
-                                <div class="row">
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                </div>
-
-                                <div class="row mt-6">
-                                    <div class="col-12 col-md-3">
-                                        <div class="chart-container">
-                                            <canvas id="appChart" style="height: 179px;"></canvas>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-9">
-                                        <div class="progress-container mt-5">
-                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="bg-success" value="234" />
-                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="bg-warning" value="550" />
-                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="null" value="350" />
-                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="bg-secondary" value="798" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <x-monitoring-card icon="fa-user" title="Visitors is Active" href="" icon="fa-up-right-from-square" value="149" content="User" percentage="12%" />
         </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <x-monitoring-card icon="fa-user" title="Traffic Website" href="" icon="fa-up-right-from-square" value="6" content="Type" percentage="12%" />
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <x-monitoring-card icon="fa-user" title="Visit Time (m)" href="" icon="fa-up-right-from-square" value="13" content="Minute" percentage="12%" />
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4">
+            <x-monitoring-card icon="fa-user" title="Duration of Visit (m)" href="" icon="fa-up-right-from-square" value="10" content="minute" percentage="12%" />
+        </div>
+    </div><hr class="my-2">
 
     <script>
         // CHART DOUGHNUT
