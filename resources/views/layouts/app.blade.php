@@ -109,8 +109,8 @@
                         <div class="app-category">
                             <h6 class="fw-semibold fs-xs text-end text-gray mb-0">Opened Now</h6>
                             <div class="app-name d-flex gap-2">
-                                <img src="{{ asset('assets/images/logo/Logo Baitullah.png') }}" alt="Logo Baitullah" width="20" height="20">
-                                <p class="fw-semibold text-black fs-6 mb-0">@yield('app-name')</p>
+                                <img src="{{ asset('assets/images/logo/' . View::yieldContent('pict')) }}" alt="App Logo" width="20" height="20">
+                                <p class="fw-semibold text-black fs-6 mb-0">@yield('app-name') </p>
                             </div>
                         </div>
 
