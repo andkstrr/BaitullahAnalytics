@@ -79,10 +79,10 @@
 
                                     <div class="col-12 col-md-9">
                                         <div class="progress-container mt-5">
-                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="036222" value="234" />
-                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="01A23B" value="550" />
-                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="68DA6B" value="350" />
-                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="79CB79" value="798" />
+                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="00531E" value="234" />
+                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="027C29" value="550" />
+                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="00B03F" value="350" />
+                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="00C647" value="798" />
                                         </div>
                                     </div>
                                 </div>

@@ -1,9 +1,45 @@
+/* @font-face {
+    font-family: Maison;
+    src: url("../font/MaisonNeue/MaisonNeue-Book.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: MaisonDemi;
+    src: url("../font/MaisonNeue/MaisonNeue-Demi.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: MaisonExtend;
+    src: url("../font/MaisonNeue/MaisonNeueExtended-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: MaisonExtendExtraBold;
+    src: url("../font/MaisonNeue/MaisonNeueExtended-ExtraBold.ttf") format('truetype');
+}
+
+.Maison {
+    font-family:'Maison';
+}
+
+.MaisonDemi {
+    font-family:'MaisonDemi';
+}
+
+.MaisonExtend {
+    font-family:'MaisonExtend';
+}
+
+.MaisonExtendExtraBold {
+    font-family:'MaisonExtendExtraBold';
+} */
 body {
+    /* font-family: "Maison", sans-serif !important; */
     overflow-x: hidden;
 }
 .sidebar {
     width: 230px;
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     padding: 20px;
     transition: all 0.3s;
     position: fixed;
@@ -81,6 +117,78 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #05360086;
+}
+.calendar {
+    width: 380px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: black;
+}
+.header-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.monthYear {
+    text-align: center;
+    font-weight: 600;
+    width: 150px;
+}
+.header-calendar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgb(0,0,0,0.2);
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999fa6;
+    font-weight: 500;
+}
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+}
+.date:hover,
+.date.active {
+    background-color: #085000;
+    color: #fff;
+
+}
+.date.inactive {
+    color: #d2d2d2;
+}
+.date.inactive:hover {
+    color: #fff;
 }
 
 .card { background-color: #fcfcfc; border: none; }

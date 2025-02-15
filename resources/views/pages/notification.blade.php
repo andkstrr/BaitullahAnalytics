@@ -20,10 +20,10 @@
         </div>
 
         <div class="col-12 col sm-6 col-md-4">
-            <x-monitoring-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.application') }}" icon="fa-magnifying-glass-chart" value="376K" content="" percentage="12%" />
+            <x-monitoring-card title="Traffic Website" href="{{ route('BCI.analytics.monitoring.application') }}" icon="fa-magnifying-glass-chart" value="376K" content="" percentage="12%" />
         </div>
     </div><hr class="my-3">
 
-    {{-- TABLE --}}
+    {{-- TABLE NOTIFICATION --}}
 
 @endsection

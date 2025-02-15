@@ -7,7 +7,7 @@
     <title>Baitullah Analytics</title>
 
     {{-- WEB ICON --}}
-    <link rel="website icon" href="{{ asset('assets/images/logo/Logo Baitullah.png') }}">
+    <link rel="website icon" href="{{ asset('assets/images/logo/' . View::yieldContent('pict')) }}">
 
     {{-- FASTBOOTSTRAP --}}
     <link href="https://cdn.jsdelivr.net/npm/fastbootstrap@2.2.0/dist/css/fastbootstrap.min.css" rel="stylesheet" integrity="sha256-V6lu+OdYNKTKTsVFBuQsyIlDiRWiOmtC8VQ8Lzdm2i4=" crossorigin="anonymous">
@@ -60,7 +60,7 @@
                         </button>
                     </div>
                     <!-- SUBMENU DROPDOWN -->
-                    <div class="collapse" id="monitoringSubmenu">
+                    <div class="collapse mt-3" id="monitoringSubmenu">
                         <ul class="nav flex-column ps-5">
                             <li class="nav-item">
                                 <a href="{{ route('BCI.analytics.monitoring.users') }}" class="nav-link mb-2 text-gray {{ request()->routeIs('BCI.analytics.monitoring.users') ? 'active' : '' }}">
@@ -92,6 +92,7 @@
                         <h2 class="fw-semibold fs-2 text-black">@yield('title-page')</h2>
 
                         {{-- KATEGORI WAKTU --}}
+                        @if(request()->routeIs(['BCI.analytics.dashboard', 'BCI.analytics.monitoring.dashboard']))
                         <div class="dropdown">
                             <button class="btn-time dropdown-toggle fs-xs px-3 py-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               This Month
@@ -102,6 +103,7 @@
                               <li><a class="dropdown-item text-black" href="#">Last Year</a></li>
                             </ul>
                         </div>
+                        @endif
                     </div>
 
                     {{-- KATEGORI WEB/APK --}}
@@ -131,43 +133,13 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/index.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.2/main.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const dropdownId = "monitoringSubmenu";
-            const dropdown = document.getElementById(dropdownId);
-            const toggleButton = document.querySelector(`[data-bs-target="#${dropdownId}"]`);
-            const icon = toggleButton.querySelector("i");
 
-            // Cek apakah dropdown terbuka sebelumnya
-            if (localStorage.getItem(dropdownId) === "open") {
-                let bsCollapse = new bootstrap.Collapse(dropdown, { toggle: false });
-                bsCollapse.show();
-                toggleButton.setAttribute("aria-expanded", "true");
-                icon.classList.remove("fa-chevron-down");
-                icon.classList.add("fa-chevron-up");
-            }
-
-            // Update icon dan simpan status ke localStorage saat dropdown dibuka
-            dropdown.addEventListener("shown.bs.collapse", function () {
-                localStorage.setItem(dropdownId, "open");
-                toggleButton.setAttribute("aria-expanded", "true");
-                icon.classList.remove("fa-chevron-down");
-                icon.classList.add("fa-chevron-up");
-            });
-
-            // Update icon dan simpan status ke localStorage saat dropdown ditutup
-            dropdown.addEventListener("hidden.bs.collapse", function () {
-                localStorage.setItem(dropdownId, "closed");
-                toggleButton.setAttribute("aria-expanded", "false");
-                icon.classList.remove("fa-chevron-up");
-                icon.classList.add("fa-chevron-down");
-            });
-        });
     </script>
 
 

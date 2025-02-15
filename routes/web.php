@@ -8,7 +8,7 @@ use App\Http\Controllers\PageController;
 // baitullah.co.id
 Route::prefix('/BCI')->name('BCI.')->group(function () {
     Route::prefix('/analytics')->name('analytics.')->group(function () {
-        Route::get('/', [PageController::class, 'dashboardBCI'])->name('dashboard');
+        Route::get('/', [PageController::class, 'dashboard'])->name('dashboard');
         Route::get('/notification', [PageController::class, 'notification'])->name('notification');
         Route::get('/report', [PageController::class, 'report'])->name('report');
 

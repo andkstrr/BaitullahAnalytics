@@ -1,6 +1,6 @@
 @props(['title', 'value', 'percentage'])
 
-<div class="card p-4 mb-4 rounded-3 shadow">
+<div class="card p-4 mb-5 rounded-3 shadow">
     <div class="d-flex justify-content-between align-items-center">
         <div>
             <p class="text-gray fs-xs mb-0">This Month</p>

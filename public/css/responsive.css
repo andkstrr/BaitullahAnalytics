@@ -20,3 +20,11 @@
         width: 100%;
     }
 }
+
+@media (max-width: 1150px) {
+    .date {
+        flex: 1 0 calc(14.28% - 3px);
+        max-width: 35px;
+        height: 35px;
+    }
+}
