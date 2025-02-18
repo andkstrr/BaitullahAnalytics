@@ -1,11 +1,19 @@
-<div class="card bg-gray p-4 rounded-3 shadow">
-    <div class="card-content d-flex align-items-start gap-3">
-        <div class="icon-container mt-2">
-            <i class="fas fa-user fa-sm"></i>
-        </div>
-        <div>
-            <h5 class="text-black fs-2 fw-semibold mb-0">234</h5>
-            <p class="fs-6 fw-normal text-black mb-0">Users</p>
-        </div>
+@props(['icon', 'title', 'href', 'icon', 'content', 'value', 'percentage'])
+
+<div class="card p-4 mb-5 rounded-3 shadow">
+    <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <p class="text-gray fs-xs mb-0">Today's</p>
+                <h6 class="text-black fs-6 mb-2"> {{ $title }}</h6>
+            </div>
+            <a href="{{ $href }}"><i class="fa-solid {{ $icon }} text-gray me-2"></i></a>
+    </div>
+    <div>
+        <h4 class="fw-semibold display-6 text-black">{{ $value }}<small class="fs-6">{{ $content }}</small></h4>
+        <p class="text-black fs-sm fw-normal mb-0">
+            <span class="text-plus fw-semibold">
+                <i class="fa-solid fa-angles-up"></i> {{ $percentage ?? '0%' }}
+            </span> vs last month
+        </p>
     </div>
 </div>

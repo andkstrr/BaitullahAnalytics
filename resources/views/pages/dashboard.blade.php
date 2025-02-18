@@ -44,14 +44,18 @@
             <x-tab-content
                 title="Users"
                 object="User"
+                href=""
+                icon="fa-user"
+                information=""
                 :tabs="[
                     'Daily' => ['label' => 'Daily', 'value' => '1,403'],
                     'Monthly' => ['label' => 'Monthly', 'value' => '18,3K'],
                     'Yearly' => ['label' => 'Yearly', 'value' => '520K'],
                 ]"
                 :percentages="[
-                    'unread' => '+5.12%',
-                    'read' => '+12.30%',
+                    'Daily' => '+5.12%',
+                    'Monthly' => '+12.30%',
+                    'Yearly' => '+12.30%',
                 ]"
             />
         </div>
@@ -96,7 +100,7 @@
                     <div id="clock"><h6 id="date-time"></h6></div>
                 </div>
                 <div class="card-content">
-
+                    
                 </div>
             </div>
         </div>
@@ -104,33 +108,8 @@
         {{-- RIGHT COL --}}
         <div class="col-12 col-md-12 col-lg-4 mb-4">
             <div class="card-content">
-                <x-pie-chart />
+                <x-pie-chart title="Browser Usage" />
             </div>
         </div>
     </div>
-
-    <script>
-        // Inisialisasi Peta
-var map = L.map('map').setView([20, 0], 2); // Posisi awal
-
-// Tambahkan TileLayer (Peta Dasar)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
-
-// Data Dummy (Bisa Diganti dengan Data dari Database)
-var locations = [
-    { lat: 37.7749, lng: -122.4194 }, // San Francisco
-    { lat: 48.8566, lng: 2.3522 }, // Paris
-    { lat: -1.2921, lng: 36.8219 }, // Nairobi
-    { lat: 35.6895, lng: 139.6917 }, // Tokyo
-    { lat: -33.8688, lng: 151.2093 } // Sydney
-];
-
-// Tambahkan Marker ke Peta
-locations.forEach(function(loc) {
-    L.marker([loc.lat, loc.lng]).addTo(map);
-});
-
-    </script>
 @endsection

@@ -66,15 +66,18 @@
         {{-- RIGHT COL --}}
         <div class="col-12 col-md-6 col-lg-3">
             <x-tab-content
-                title="Monitoring"
-                object="txt"
+                title=""
+                object=""
+                href=""
+                icon=""
+                information=""
                 :tabs="[
-                    'unread' => ['label' => 'Unread', 'value' => '234'],
-                    'read' => ['label' => 'Read', 'value' => '520'],
+                    'users' => ['label' => 'Users', 'value' => '17.5K'],
+                    'page' => ['label' => 'Page Views', 'value' => '520K'],
                 ]"
                 :percentages="[
-                    'unread' => '+5.12%',
-                    'read' => '+12.30%',
+                    'users' => '+5.12%',
+                    'page' => '+12.30%',
                 ]"
             />
         </div>

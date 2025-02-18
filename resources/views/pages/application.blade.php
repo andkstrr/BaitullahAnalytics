@@ -12,86 +12,90 @@
     {{-- SECTION 1 --}}
     <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6>
     <div class="row mt-4">
-        {{-- LEFT COL --}}
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-12 col-md-3">
             {{-- CARD --}}
-            <div class="card rounded-3 shadow">
-                <div class="card-title px-4 pt-4">
-                    <h5 class="fw-semibold fs-sm text-gray">Today's</h5>
-                    <h5 class="fw-semibold fs-5 text-black">Page Views</h5>
-                    <div class="value mt-3">
-                        <h2 class="fw-medium display-4 text-black">1,500</h2>
-                        <p class="text-black fs-6 fw-normal mb-0">
-                            <span class="text-plus fw-semibold">
-                                <i class="fas fa-angles-up"></i> {{ $percentage ?? '0%' }}
-                            </span> more than yesterday
-                        </p>
-                    </div>
-                </div><hr>
-                <div class="card-content px-4 py-4">
-                    {{-- ITEM 1 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 2 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 3 --}}
-                    <x-application-statisctic />
-
-                    {{-- ITEM 4 --}}
-                    <x-application-statisctic />
-                </div>
-            </div>
+            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
         </div>
 
-        {{-- RIGHT COL --}}
-        <div class="col-12 col-sm-6 col-md-8">
-            <div class="card p-4 rounded-3 shadow">
-                <div class="card-title">
-                    <h5 class="fw-semibold fs-sm text-gray">Today's</h5>
-                    <h5 class="fw-semibold fs-5 text-black">Activities</h5>
-                </div>
-                <div class="card content">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card content">
-                                <div class="row">
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                    <div class="col-6 col-sm-6 col-md-3">
-                                        <x-application-card />
-                                    </div>
-                                </div>
+        <div class="col-12 col-sm-12 col-md-3">
+            {{-- CARD --}}
+            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+        </div>
 
-                                <div class="row mt-6">
-                                    <div class="col-12 col-md-3">
-                                        <div class="chart-container">
-                                            <canvas id="appChart" style="height: 179px;"></canvas>
-                                        </div>
-                                    </div>
+        <div class="col-12 col-sm-12 col-md-3">
+            {{-- CARD --}}
+            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+        </div>
 
-                                    <div class="col-12 col-md-9">
-                                        <div class="progress-container mt-5">
-                                            <x-application-activities title="Visitors" widthBar="90px" bgColor="00531E" value="234" />
-                                            <x-application-activities title="Visitors" widthBar="260px" bgColor="027C29" value="550" />
-                                            <x-application-activities title="Visitors" widthBar="210px" bgColor="00B03F" value="350" />
-                                            <x-application-activities title="Visitors" widthBar="300px" bgColor="00C647" value="798" />
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="col-12 col-sm-12 col-md-3">
+            {{-- CARD --}}
+            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+        </div>
+    </div><hr class="my-3">
+
+    {{-- SECTION 2 --}}
+    <div class="row mt-4">
+        <div class="col-12 col sm-6 col-md-8">
+            <div class="card rounded-3 shadow">
+                <div class="card-title px-5 pt-4">
+                    <div class="d-flex justify-content-between align-items center">
+                        <div><p class="fw-semibold text-gray fs-5 mb-0">Activities</p></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                                <label class="label" for="flexRadioDefault1">Daily</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <label class="label" for="flexRadioDefault2">Monthly</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                <label class="label" for="flexRadioDefault3">Yearly</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="card-content p-6 mb-5">
+                    <x-line-chart />
+                </div>
             </div>
         </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <x-tab-content
+                title="Top Accumulated"
+                object=""
+                href=""
+                icon="fa-user"
+                information=""
+                :tabs="[
+                    'Daily' => ['label' => 'Page Views', 'value' => '/umroh-plus'],
+                    'Traffic' => ['label' => 'Traffic', 'value' => 'Organic'],
+                ]"
+                :percentages="[
+                    'unread' => '+5.12%',
+                    'read' => '+12.30%',
+                ]"
+            />
+        </div>
+    </div>
+
+
+
+    {{-- RIGHT COL --}}
+    {{-- <div class="card p-3 rounded-3 shadow">
+        <div class="d-flex align-items-center gap-3">
+            <div><canvas id="appChart" width="150px" height="100px"></canvas></div>
+            <div class="content">
+                <div class="title fw-semibold fs-5 text-black">Top Page Views</div><br>
+                <div class="subtitle">
+                    <h6 class="fw-semibold fs-6 text-gray">Accumulated Visits</h6>
+                    <h3 class="fw-semibold fs-3 text-black">/umroh-plus <span class="fs-xs">(13,7K)</span></h3
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
     <script>
         // CHART DOUGHNUT

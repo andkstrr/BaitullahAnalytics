@@ -1,11 +1,12 @@
-@props(['title', 'tabs', 'object', 'percentages'])
+@props(['title', 'tabs', 'object', 'percentages', 'href', 'icon', 'information'])
 
 <div class="card shadow p-4 mb-6 rounded-3" x-data="{
         activeTab: '{{ array_key_first($tabs) }}',
         percentages: @json($percentages)
-}">
+    }">
+    
     <div class="card-title px-1">
-        <h6 class="text-gray">Total All {{ $title }}</h6>
+        <h6 class="text-gray">{{ $title }}</h6>
         <ul class="nav nav-pills mb-3">
             @foreach ($tabs as $key => $tab)
                 <li class="nav-item">
@@ -35,9 +36,9 @@
     <div class="card-end">
         <p class="text-black fw-normal mt-5 mb-0">
             <span class="text-plus fw-semisemibold fs-5">
-                <i class="fa-solid fa-angles-up "></i>
+                <a href="{{ $href }}" class="text-gray"><i class="fa-solid {{ $icon }} fa-xs"></i></a>
                 <span x-text="percentages[activeTab] ?? '0%'"></span>
-            </span> than last week
+            </span>{{ $information }}
         </p>
     </div>
 </div>

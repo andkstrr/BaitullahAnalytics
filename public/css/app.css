@@ -130,7 +130,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 .monthYear {
     text-align: center;
@@ -190,7 +190,18 @@ body {
 .date.inactive:hover {
     color: #fff;
 }
-
+.status-active {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #e6f4ea;
+    color: #34a853;
+}
+.status-inactive {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #ffeeba;
+    color: #a67c00;
+}
 .card { background-color: #fcfcfc; border: none; }
 .toggle-btn { display: none; }
 .bg-gray { background-color: #fff; }

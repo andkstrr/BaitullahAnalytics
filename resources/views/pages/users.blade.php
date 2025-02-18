@@ -37,8 +37,24 @@
     <div class="row mt-7 mb-9">
         <div class="col-12 col-sm-12 col-md-12 col-lg-8 mb-4">
             <div class="card rounded-3 shadow">
-                <div class="card-title px-4 pt-4">
-                    <p class="fw-semibold text-gray fs-6 mb-0">Activities</p>
+                <div class="card-title px-5 pt-4">
+                    <div class="d-flex justify-content-between align-items center">
+                        <div><p class="fw-semibold text-gray fs-5 mb-0">Activities</p></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                                <label class="label" for="flexRadioDefault1">Daily</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <label class="label" for="flexRadioDefault2">Monthly</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                <label class="label" for="flexRadioDefault3">Yearly</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-content p-6 mb-5">
                     <x-line-chart />
@@ -47,95 +63,74 @@
         </div>
         <div class="col-12 col-md-12 col-lg-4 mb-4">
             <div class="card rounded-3 shadow">
-                <div class="card-title text-center px-4 pt-4">
-                    <p class="fw-semibold text-gray fs-6 mb-0">Browser Usage</p>
-                </div>
-                <div class="card-content p-4">
-                    <div style="width: 80%; margin: 0 auto;">
-                        <canvas id="browserUsage"></canvas>
-                    </div>
-                </div>
+                <x-pie-chart title="Browser Usage" />
             </div>
         </div>
     </div>
 
-
-    <div class="row mt-4">
+    {{-- <div class="row mt-4">
         <div class="col-12">
             <div class="card p-3">
                 <div class="table-responsive">
-                    <table class="table align-middle">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th class="text-center">Email</th>
-                                <th class="text-start">Username</th>
-                                <th class="text-center">Status</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td class="d-flex align-items-center">
-                                    <span class="avatar"><i class="fas fa-user"></i></span>
-                                    <div class="ps-6">
-                                        <span>markotto@email.com</span><br>
-                                        <small>Added: 01/03/2020</small>
-                                    </div>
-                                </td>
-                                <td>Markotto89</td>
-                                <td class="status"><span class="active">Active</span></td>
-                                <td>
-                                    <button class="btn btn-danger btn-sm">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
+                    <table class="table table-striped table-border">
+                      <thead>
+                        <tr class="fw-bold fs-6">
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Date</th>
+                          <th>Role</th>
+                          <th>Status</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divider">
+                        @foreach (range(1, 2) as $history) {
+                            <tr class="fw-normal fs-sm">
+                          <td>1</td>
+                          <td>
+                            <a href="#" class="text-black">andkstrr@gmail.com</a>
+                          </td>
+                          <td>17 Feb 2025</td>
+                          <td>Guest</td>
+                          <td><span class="status-active">• Active</span></td>
+                          <td>
+                            <div class="dropdown">
+                              <button class="btn btn-default dropdown-toggle" type="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">More</button>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <a class="dropdown-item" href="#">George Washington</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                              <a href="#" class="text-black">sanmorafd@gmail.com</a>
+                            </td>
+                            <td>17 Feb 2025</td>
+                            <td>Unknown</td>
+                            <td><span class="status-inactive">• Inactive</span></td>
+                            <td>
+                              <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button"
+                                 data-bs-toggle="dropdown" aria-expanded="false">More</button>
+                                <ul class="dropdown-menu">
+                                  <li>
+                                    <a class="dropdown-item" href="#">George Washington</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        }
+                        @endforeach
+                      </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <script>
-        // CHART DOUGHNUT
-        document.addEventListener('DOMContentLoaded', function () {
-
-        const cbu = document.getElementById('appChart').getContext('2d');
-
-        const appChart = new Chart(cbu, {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-              label: 'Customer Satisfaction',
-              data: [30, 15, 10], // data persentase
-              backgroundColor: [
-                '#006116',
-                '#b98a00',
-                '#998a5f',
-              ],
-            }]
-          },
-          options: {
-            responsive: true, // Membuat chart responsif
-            maintainAspectRatio: false, // Memungkinkan pengaturan aspek rasio
-            cutoutPercentage: 50, // Mengatur ukuran lubang di tengah doughnut
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label: function(context) {
-                    const label = context.label || '';
-                    const value = context.formattedValue || '';
-                    return `${label}: ${value}%`; // Menampilkan persentase pada tooltip
-                  }
-                }
-              }
-            }
-          }
-        });
-      });
-    </script>
+    </div> --}}
 @endsection
