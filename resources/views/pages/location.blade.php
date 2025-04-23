@@ -56,7 +56,8 @@
 
         merchants.forEach(merchant => {
             if (merchant.latitude && merchant.longitude) {
-                let icon = iconRed; // default
+                let icon = iconRed; // default icon
+
                 if (merchant.isMerchant == 'pending') icon = iconYellow;
                 else if (merchant.isMerchant == 'merchant') icon = iconGreen;
 

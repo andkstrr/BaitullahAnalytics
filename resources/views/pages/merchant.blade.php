@@ -25,6 +25,12 @@
     </div><hr class="my-3">
 
     <div class="table-responsive rounded-3 my-5">
+        @if(session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <table class="table table-custom table-borderless">
         <thead>
             <tr class="table-light">
@@ -92,24 +98,29 @@
                 <td>{{ $merchant->ppiu ?: '-' }}</td>
                 <td>{{ $merchant->pihk ?: '-' }}</td>
                 <td>
-                    @if ($merchant->isMerchant === 'not')
-                        <p class="badge py-1 px-2 mb-0 bg-red fs-sm fw-semibold text-uppercase">
-                            Not Merchant
-                        </p>
-                    @elseif ($merchant->isMerchant === 'pending')
-                        <p class="badge py-1 px-2 mb-0 bg-yellow fs-sm fw-semibold text-uppercase">
-                            Pending
-                        </p>
-                    @elseif ($merchant->isMerchant === 'merchant')
-                        <p class="badge py-1 px-2 mb-0 bg-green fs-sm fw-semibold text-uppercase">
-                            Merchant
-                        </p>
-                    @else
-                        <p class="badge fs-sm bg-secondary">
-                            Unknown
-                        </p>
-                    @endif
+                    <div class="dropdown">
+                        <a class="badge py-1 px-2 mb-0 fs-sm fw-semibold text-uppercase dropdown-toggle
+                            {{ $merchant->isMerchant === 'not' ? 'bg-red' : ($merchant->isMerchant === 'pending' ? 'bg-yellow' : ($merchant->isMerchant === 'merchant' ? 'bg-green' : 'bg-secondary')) }}"
+                            href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ ucfirst($merchant->isMerchant ?? 'Unknown') }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach(['not' => 'Not Merchant', 'pending' => 'Pending', 'merchant' => 'Merchant'] as $status => $label)
+                                <li>
+                                    <form action="{{ route('analytics.merchant.update-status', $merchant->id) }}" method="POST" onsubmit="return confirmUpdate('{{ $merchant->name }}', '{{ ucfirst($label) }}')">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="isMerchant" value="{{ $status }}">
+                                        <button type="submit" class="dropdown-item" type="submit">
+                                            {{ ucfirst($label) }}
+                                        </button>
+                                    </form>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </td>
+
             </tr>
             @endforeach
         </tbody>
@@ -124,5 +135,11 @@
                 {{ $merchants->appends(request()->query())->links('vendor.pagination.bootstrap-5') }}
             </div>
         </div>
+
+        <script>
+            function confirmUpdate(merchantName, newStatusLabel) {
+                return confirm(`Apakah Anda yakin ingin mengubah status ${merchantName} menjadi "${newStatusLabel}"?`);
+            }
+        </script>
     </div>
 @endsection

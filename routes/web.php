@@ -22,7 +22,7 @@ Route::prefix('/analytics')->name('analytics.')->group(function () {
     // MERCHANT
     Route::prefix('/merchant')->name('merchant.')->group(function () {
         Route::get('/', [MerchantController::class, 'dashboard'])->name('dashboard');
-        Route::get('/search-merchant', [MerchantController::class, 'search_merchant'])->name('search_merchant');
+        Route::put('/{merchant}/update-status', [MerchantController::class, 'updateStatus'])->name('update-status');
         Route::get('/location', [MerchantController::class, 'location'])->name('location');
     });
 });

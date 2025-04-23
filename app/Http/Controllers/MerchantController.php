@@ -60,6 +60,18 @@ class MerchantController extends Controller
         return $query;
     }
 
+    public function updateStatus(Request $request, Merchant $merchant) {
+        $request->validate([
+            'isMerchant' => 'required|in:not,pending,merchant',
+        ]);
+
+        $merchant->update([
+            'isMerchant' => $request->isMerchant
+        ]);
+
+        return back()->with('success', 'Merchant status updated successfully!');
+    }
+
 
 
     public function location() {
