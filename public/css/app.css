@@ -118,94 +118,35 @@ body {
     align-items: center;
     background-color: #05360086;
 }
-.calendar {
-    width: 380px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    color: black;
-}
-.header-calendar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-.monthYear {
-    text-align: center;
-    font-weight: 600;
-    width: 150px;
-}
-.header-calendar button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 50%;
-    background-color: #fff;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 4px rgb(0,0,0,0.2);
-}
-.days {
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-}
-.day {
-    text-align: center;
-    padding: 5px;
-    color: #999fa6;
-    font-weight: 500;
-}
-.dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-}
-.date {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-    margin: auto;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: 0.2s;
-}
-.date:hover,
-.date.active {
-    background-color: #085000;
-    color: #fff;
 
+.table-custom th,
+.table-custom td {
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
 }
-.date.inactive {
-    color: #d2d2d2;
+
+.table-custom thead th {
+    font-weight: 600;
+    letter-spacing: 0.03em;
 }
-.date.inactive:hover {
-    color: #fff;
+
+.table-custom tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease-in-out;
 }
-.status-active {
-    padding: 5px 10px;
-    border-radius: 10px;
-    background-color: #e6f4ea;
-    color: #34a853;
-}
-.status-inactive {
-    padding: 5px 10px;
-    border-radius: 10px;
-    background-color: #ffeeba;
-    color: #a67c00;
-}
+
 .card { background-color: #fcfcfc; border: none; }
 .toggle-btn { display: none; }
 .bg-gray { background-color: #fff; }
+.bg-red { background-color: #FBE0E3 !important; color: #E35E6A; }
+.bg-yellow { background-color: #FFF5E0 !important; color: #fdb72b;}
+.bg-green { background-color: #E8F5E9 !important; color: #00bd48; }
+.table-gray {  background-color: #007bff !important; /* Warna biru Bootstrap primary */
+    color: #fff; /* Warna teks putih untuk kontras */}
 .text-gray { color: gray; }
 .text-black { color: black; }
 .text-plus { color: #00bd48}
 .text-minus { color: rgb(218, 0, 0)}
+#map { height: 100vh; }

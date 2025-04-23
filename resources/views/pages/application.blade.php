@@ -14,22 +14,22 @@
     <div class="row mt-4">
         <div class="col-12 col-sm-12 col-md-3">
             {{-- CARD --}}
-            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+            <x-application-card title="Total Visitors" href="{{ route('analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
         </div>
 
         <div class="col-12 col-sm-12 col-md-3">
             {{-- CARD --}}
-            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+            <x-application-card title="Total Visitors" href="{{ route('analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
         </div>
 
         <div class="col-12 col-sm-12 col-md-3">
             {{-- CARD --}}
-            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+            <x-application-card title="Total Visitors" href="{{ route('analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
         </div>
 
         <div class="col-12 col-sm-12 col-md-3">
             {{-- CARD --}}
-            <x-application-card title="Total Visitors" href="{{ route('BCI.analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
+            <x-application-card title="Total Visitors" href="{{ route('analytics.monitoring.users') }}" icon="fa-up-right-from-square" content="" value="1,500" percentage="12%" />
         </div>
     </div><hr class="my-3">
 

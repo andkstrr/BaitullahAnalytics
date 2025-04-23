@@ -15,6 +15,10 @@
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    {{-- LEAFLET MAPS --}}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-search@2.9.8/dist/leaflet-search.min.css" />
+
     {{-- AOS CSS --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -34,12 +38,12 @@
             <p class="fw-semibold fs-sm text-gray mt-7 px-2">General</p>
             <ul class="nav flex-column gap-2">
                 <li class="nav-item">
-                    <a href="{{ route('BCI.analytics.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.dashboard') ? 'active' : '' }}">
-                        <i class="fas fa-house-laptop"></i> Dashboard
+                    <a href="{{ route('analytics.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('analytics.dashboard') ? 'active' : '' }}">
+                        <i class="fas fa-table-columns"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('BCI.analytics.notification') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.notification') ? 'active' : '' }}">
+                    <a href="{{ route('analytics.notification') }}" class="nav-link text-gray {{ request()->routeIs('analytics.notification') ? 'active' : '' }}">
                         <i class="fas fa-bell"></i> Notification
                     </a>
                 </li>
@@ -51,7 +55,7 @@
                 <li class="nav-item">
                     <div class="d-flex align-items-center">
                         <!-- MONITORING -->
-                        <a href="{{ route('BCI.analytics.monitoring.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.dashboard') ? 'active' : '' }}">
+                        <a href="{{ route('analytics.monitoring.dashboard') }}" class="nav-link text-gray {{ request()->routeIs('analytics.monitoring.dashboard') ? 'active' : '' }}">
                             <i class="far fa-folder-open"></i> Monitoring
                         </a>
                         <!-- DROPDOWN -->
@@ -63,21 +67,36 @@
                     <div class="collapse mt-3" id="monitoringSubmenu">
                         <ul class="nav flex-column ps-5">
                             <li class="nav-item">
-                                <a href="{{ route('BCI.analytics.monitoring.users') }}" class="nav-link mb-2 text-gray {{ request()->routeIs('BCI.analytics.monitoring.users') ? 'active' : '' }}">
+                                <a href="{{ route('analytics.monitoring.users') }}" class="nav-link mb-2 text-gray {{ request()->routeIs('analytics.monitoring.users') ? 'active' : '' }}">
                                     <i class="fas fa-users-gear"></i> Users
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('BCI.analytics.monitoring.application') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.monitoring.application') ? 'active' : '' }}">
-                                    <i class="fas fa-cogs"></i> Application
+                                <a href="{{ route('analytics.monitoring.application') }}" class="nav-link text-gray {{ request()->routeIs('analytics.monitoring.application') ? 'active' : '' }}">
+                                    <i class="fas fa-house-laptop"></i> Application
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('BCI.analytics.report') }}" class="nav-link text-gray {{ request()->routeIs('BCI.analytics.report') ? 'active' : '' }}">
+                    <a href="{{ route('analytics.report') }}" class="nav-link text-gray {{ request()->routeIs('analytics.report') ? 'active' : '' }}">
                         <i class="fas fa-chart-area"></i> Report
+                    </a>
+                </li>
+            </ul>
+
+            {{-- KATEGORI NAVIGASI MERCHANT --}}
+            <p class="fw-semibold fs-sm text-gray mt-8 px-2">Merchant</p>
+            <ul class="nav flex-column gap-2">
+                <li class="nav-item">
+                    <a href="{{ route('analytics.merchant.dashboard')}}" class="nav-link text-gray {{ request()->routeIs('analytics.merchant.dashboard') ? 'active' : '' }}">
+                        <i class="fas fa-plane-arrival"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('analytics.merchant.location')}}" class="nav-link text-gray {{ request()->routeIs('analytics.merchant.location') ? 'active' : '' }}">
+                        <i class="fas fa-map-location-dot"></i> Location
                     </a>
                 </li>
             </ul>
@@ -92,7 +111,7 @@
                         <h2 class="fw-semibold fs-2 text-black">@yield('title-page')</h2>
 
                         {{-- KATEGORI WAKTU --}}
-                        @if(request()->routeIs(['BCI.analytics.dashboard', 'BCI.analytics.monitoring.dashboard']))
+                        @if(request()->routeIs(['analytics.dashboard', 'analytics.monitoring.dashboard']))
                         <div class="dropdown">
                             <button class="btn-time dropdown-toggle fs-xs px-3 py-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               This Month
@@ -137,12 +156,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-
-    </script>
-
-
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-search@2.9.8/dist/leaflet-search.min.js"></script>
     <script>
         AOS.init();
     </script>
