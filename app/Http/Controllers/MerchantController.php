@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Merchant;
 
@@ -9,11 +10,11 @@ class MerchantController extends Controller
 {
     public function dashboard(Request $request)
     {
-        // JOIN ke tabel cities dan select city name
+        // relasi ke table cities
         $query = Merchant::join('cities', 'merchants.city', '=', 'cities.id')
             ->select('merchants.*', 'cities.name as city_name');
 
-        // Terapkan filter dengan function terpisah
+        // function query
         $query = $this->searchByName($query, $request);
         $query = $this->searchByCity($query, $request);
         $query = $this->filterByStatus($query, $request);
@@ -21,7 +22,7 @@ class MerchantController extends Controller
         // Pagination
         $merchants = $query->paginate(30)->withQueryString();
 
-        // Hitung status tetap seperti biasa
+        // count value
         $notMerchant = Merchant::where('isMerchant', 'not')->count();
         $pendingMerchant = Merchant::where('isMerchant', 'pending')->count();
         $activeMerchant = Merchant::where('isMerchant', 'merchant')->count();
@@ -75,7 +76,13 @@ class MerchantController extends Controller
 
 
     public function location() {
-        $merchants = Merchant::all();
+        $merchants = DB::table('merchants')
+            ->join('cities', 'merchants.city', '=', 'cities.id')
+            ->select(
+                'merchants.*',
+                'cities.name as city_name'
+            )
+            ->get();
 
         return view('pages.location', compact('merchants'));
     }

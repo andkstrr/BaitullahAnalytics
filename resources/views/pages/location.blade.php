@@ -65,7 +65,17 @@
                         title: merchant.name,
                         icon: icon
                     })
-                    .bindPopup(`<strong>${merchant.name}</strong><br>${merchant.city}`);
+                    .bindPopup(`
+                        <strong>${merchant.name}</strong><br><br>
+                        Kota : ${merchant.city_name}<br>
+                        Status : ${merchant.isMerchant == 'not' ? 'Not Merchant' :
+                                  (merchant.isMerchant == 'pending' ? 'Pending' :
+                                  (merchant.isMerchant == 'merchant' ? 'Merchant' :
+                                  'Unknown'))}<br>
+                        PPIU : ${merchant.ppiu ?? '-'}<br>
+                        PIHK : ${merchant.pihk ?? '-'}<br>
+                        Contact : ${merchant.contact ?? '-'}
+                    `);
                 markersLayer.addLayer(marker);
             }
         });

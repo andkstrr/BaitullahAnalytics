@@ -58,6 +58,10 @@
                                 <input type="text" name="search_city" class="form-control mb-2"
                                     placeholder="Search city name" value="{{ request('search_city') }}">
                                 <button type="submit" class="btn btn-success btn-sm w-100">Search</button>
+
+                                @if(request('merchant_status'))
+                                    <input type="hidden" name="merchant_status" value="{{ request('merchant_status') }}">
+                                @endif
                             </form>
                         </div>
                     </div>
@@ -72,6 +76,10 @@
                         </a>
                         <div class="dropdown-menu p-2">
                             <form action="{{ route('analytics.merchant.dashboard') }}" method="GET">
+                                @if(request('search_city'))
+                                    <input type="hidden" name="search_city" value="{{ request('search_city') }}">
+                                @endif
+
                                 <select name="merchant_status" class="form-select mb-2">
                                     <option value="">All</option>
                                     <option value="not" {{ request('merchant_status') == 'not' ? 'selected' : '' }}>Not Merchant</option>
