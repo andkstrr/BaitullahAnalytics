@@ -68,7 +68,7 @@
             <div class="card rounded-3 shadow">
                 <div class="card-title px-5 pt-4">
                     <div class="d-flex justify-content-between align-items center">
-                        <div><p class="fw-semibold text-gray fs-5 mb-0">Activities</p></div>
+                        <div><p class="fw-semibold text-gray fs-6 mb-0">Activities</p></div>
                         <div class="d-flex align-items-center gap-3">
                             <div class="form-check d-flex align-items-center gap-2">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
