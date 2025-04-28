@@ -64,49 +64,35 @@
     {{-- SECTION 2 --}}
     <div class="row mt-7 mb-9">
         {{-- LEFT COL --}}
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-            {{-- CALENDAR --}}
-            <div class="card-body">
-                <div class="card calendar p-4 rounded-3 shadow">
-                    <div class="header-calendar d-flex justify-content-between align-items-center">
-                        <button id="prevBtn" class="btn btn-light rounded-circle shadow-sm">
-                            <i class="fas fa-chevron-left fa-sm"></i>
-                        </button>
-                        <div class="monthYear fw-bold text-center flex-grow-1" id="monthYear"></div>
-                        <button id="nextBtn" class="btn btn-light rounded-circle shadow-sm">
-                            <i class="fas fa-chevron-right fa-sm"></i>
-                        </button>
+        <div class="col-12 col-md-6 col-lg-9 mb-4">
+            <div class="card rounded-3 shadow">
+                <div class="card-title px-5 pt-4">
+                    <div class="d-flex justify-content-between align-items center">
+                        <div><p class="fw-semibold text-gray fs-5 mb-0">Activities</p></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                                <label class="label" for="flexRadioDefault1">Daily</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                <label class="label" for="flexRadioDefault2">Monthly</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                <label class="label" for="flexRadioDefault3">Yearly</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="days row row-cols-7 mb-5 text-center fw-semibold fs-sm">
-                        <div class="col">Sun</div>
-                        <div class="col">Mon</div>
-                        <div class="col">Tue</div>
-                        <div class="col">Wed</div>
-                        <div class="col">Thu</div>
-                        <div class="col">Fri</div>
-                        <div class="col">Sat</div>
-                    </div>
-                    <div class="dates row row-cols-7 g-1 text-center" id="dates"></div>
                 </div>
-            </div>
-        </div>
-
-        {{-- CENTER COL --}}
-        <div class="col-12 col-md-12 col-lg-4 mb-4">
-            {{-- MAPS --}}
-            <div class="card p-6 rounded-3 shadow h-100">
-                <div class="card-title d-flex justify-content-between text-black">
-                    <div class="fw-semibold fs-6">Real Time</div>
-                    <div id="clock"><h6 id="date-time"></h6></div>
-                </div>
-                <div class="card-content">
-                    
+                <div class="card-content p-6 mb-5">
+                    <x-line-chart />
                 </div>
             </div>
         </div>
 
         {{-- RIGHT COL --}}
-        <div class="col-12 col-md-12 col-lg-4 mb-4">
+        <div class="col-12 col-md-12 col-lg-3 mb-4">
             <div class="card-content">
                 <x-pie-chart title="Browser Usage" />
             </div>
