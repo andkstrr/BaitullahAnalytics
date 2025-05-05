@@ -15,6 +15,9 @@
     {{-- FONTAWESOME --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    {{-- REMIX ICON --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
     {{-- LEAFLET MAPS --}}
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-search@2.9.8/dist/leaflet-search.min.css" />
@@ -111,39 +114,62 @@
                         <h2 class="fw-semibold fs-2 text-black">@yield('title-page')</h2>
 
                         {{-- KATEGORI WAKTU --}}
-                        @if(request()->routeIs(['analytics.dashboard', 'analytics.monitoring.dashboard']))
-                        <div class="dropdown">
-                            <button class="btn-time dropdown-toggle fs-xs px-3 py-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              This Month
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a class="dropdown-item text-black" href="#">Last Month</a></li>
-                              <li><a class="dropdown-item text-black" href="#">3 Months</a></li>
-                              <li><a class="dropdown-item text-black" href="#">Last Year</a></li>
-                            </ul>
-                        </div>
+                        @if (request()->routeIs('analytics.dashboard'))
+                            <h2 class="fw-semibold fs-2 text-black">
+                                {{ ucwords(Auth::user()->name) }}!
+                            </h2>
                         @endif
                     </div>
 
                     {{-- KATEGORI WEB/APK --}}
-                    <div class="content-title d-flex align-items-center gap-4">
-                        <div class="app-category">
+                    <div class="content-title d-flex align-items-center gap-6">
+                        {{-- <div class="app-category">
                             <h6 class="fw-semibold fs-xs text-end text-gray mb-0">Opened Now</h6>
                             <div class="app-name d-flex gap-2">
                                 <img src="{{ asset('assets/images/logo/' . View::yieldContent('pict')) }}" alt="App Logo" width="20" height="20">
                                 <p class="fw-semibold text-black fs-6 mb-0">@yield('app-name') </p>
                             </div>
+                        </div> --}}
+
+                        <div class="dropdown text-center gap-10">
+                            {{-- ICON & PROFILE SECTION --}}
+                            <div class="d-flex justify-content-center gap-3 align-items-center">
+                                <a href="{{ route('analytics.merchant.create') }}" class="avatar bg-green text-decoration-none"><i class="fas fa-add fa-lg"></i></a>
+                                <a href="#" class="avatar bg-gray text-decoration-none"><i class="fas fa-magnifying-glass text-black"></i></a>
+                                <a href="{{ route('analytics.notification') }}" class="avatar bg-gray text-decoration-none"><i class="far fa-bell fa-lg text-black"></i></a>
+                                <div class="d-flex align-items-center gap-3">
+                                    @if (Auth::user()->avatar)
+                                        <img src="{{ asset('assets/avatar/' . Auth::user()->avatar) }}" class="avatar avatar-lg">
+                                    @else
+                                        <img src="{{ asset('assets/avatar/unknown.jpg') }}" class="avatar avatar-lg">
+                                    @endif
+
+                                    <div class="d-none d-md-block text-start">
+                                        <p class="fw-semibold text-black fs-5 mb-0">{{ ucfirst(Auth::user()->name) }}</p>
+                                        <h6 class="fw-normal fs-sm text-gray mb-0">{{ ucfirst(Auth::user()->role) }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- CHEVRON DOWN TO TOGGLE DROPDOWN --}}
+                            <a href="#" class="d-flex align-items-center text-dark text-decoration-none" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-chevron-down"></i>
+                            </a>
+
+                            {{-- DROPDOWN MENU --}}
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a href="{{ route('logout') }}" class="dropdown-item text-danger">Logout</a>
+                                </li>
+                            </ul>
                         </div>
 
-                        {{-- SEARCH BOX --}}
-                        <div class="search-box d-flex align-items-center px-2 py-2 rounded-3">
-                            <input type="text" id="searchInput" placeholder="Search">
-                            <i class="fas fa-search fa-xs px-3"></i>
-                        </div>
                     </div>
-
                 </div>
             </div>
+            <hr class="my-5">
 
             {{-- CONTENT --}}
             <div class="container-fluid">

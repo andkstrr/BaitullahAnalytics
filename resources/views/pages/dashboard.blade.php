@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 {{-- NAMA PAGE --}}
-@section('title-page', 'Dashboard')
+@section('title-page', 'Welcome,')
 
 {{-- NAMA APP/WEB ANALYTICS --}}
 @section('site-code-app', 'BCI')
@@ -10,36 +10,20 @@
 
 @section('content')
     {{-- SECTION 1 --}}
-    <div class="d-flex flex-column flex-lg-row gap-6 mt-6">
-        {{-- LEFT COL --}}
-        <div class="flex-grow-1">
-            <h6 class="section-title fw-semisemibold text-black fs-5 mt-7">Overview</h6>
-            <div class="row mt-4">
-                {{-- CARDS --}}
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <x-dashboard-card title="Visitors" value="1,500" percentage="12%" />
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <x-dashboard-card title="Merchant" value="1,500" percentage="12%" />
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <x-dashboard-card title="Page Views" value="1,500" percentage="12%" />
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <x-dashboard-card title="Traffic" value="1,500" percentage="12%" />
-                </div>
-            </div>
+    <div class="row mt-6">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
         </div>
-
-        {{-- RIGHT COL --}}
-        <div class="col-12 col-lg-4 mt-9">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
+            <x-dashboard-card title="Audience" value="1,500" percentage="12%" />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
             {{-- TOTAL ALL USERS CARD --}}
             <x-tab-content
                 title="Users"
@@ -59,7 +43,8 @@
                 ]"
             />
         </div>
-    </div><hr class="my-3">
+    </div>
+
 
     {{-- SECTION 2 --}}
     <div class="row mt-7 mb-9">

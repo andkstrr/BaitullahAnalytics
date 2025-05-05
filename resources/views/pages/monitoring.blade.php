@@ -10,7 +10,7 @@
 
 @section('content')
     {{-- SECTION 1 --}}
-    <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6>
+    <h6 class="section-title fw-semisemibold text-black fs-5">Overview</h6>
     <div class="row mt-4">
         {{-- CARD --}}
         <div class="col-12 col-sm-6 col-lg-3">
@@ -34,10 +34,10 @@
     <hr class="my-3">
 
     {{-- SECTION 2 --}}
-    <div class="row my-6">
+    <div class="row my-8">
         {{-- LEFT COL --}}
         <div class="col-12 col-md-6 col-lg-9 mb-4">
-            <div class="card rounded-3 shadow">
+            <div class="card rounded-4">
                 <div class="card-title px-5 pt-4">
                     <div class="d-flex justify-content-between align-items center">
                         <div><p class="fw-semibold text-gray fs-5 mb-0">Activities</p></div>

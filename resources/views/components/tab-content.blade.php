@@ -1,10 +1,10 @@
 @props(['title', 'tabs', 'object', 'percentages', 'href', 'icon', 'information'])
 
-<div class="card shadow p-4 mb-6 rounded-3" x-data="{
+<div class="card p-4 mb-6 rounded-4" x-data="{
         activeTab: '{{ array_key_first($tabs) }}',
         percentages: @json($percentages)
     }">
-    
+
     <div class="card-title px-1">
         <h6 class="text-gray">{{ $title }}</h6>
         <ul class="nav nav-pills mb-3">

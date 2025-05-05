@@ -9,15 +9,56 @@
 @section('app-name', 'baitullah.co.id')
 
 @section('content')
-    {{-- <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6> --}}
-    <div id="map" class="rounded-3 mt-14" style="height: 70vh"></div>
+    <div class="d-flex justify-content-between align-items-center">
+        <h6 class="section-title fw-semibold text-black fs-5">Overview</h6>
+
+        {{-- SEARCH DAN FILTER --}}
+        <div class="d-flex justify-content-end align-items-center" style="gap: 10px;">
+            <div class="search-box btn btn-outline-default d-flex align-items-center px-2 py-2 rounded-3">
+                <i class="fas fa-search px-1"></i>
+                <input type="text" id="searchInput" name="search_name" value="{{ request('search_name') }}" placeholder="Merchant Name" class="text-black">
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-outline-default rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 50px; height: 40px;" title="Filter Status">
+                    <i class="ri-filter-3-line fs-4 text-black"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" onclick="filterMarkers('all')">View All</a></li>
+                    <li><a class="dropdown-item" onclick="filterMarkers('not')">Not Verified</a></li>
+                    <li><a class="dropdown-item" onclick="filterMarkers('pending')">Pending</a></li>
+                    <li><a class="dropdown-item" onclick="filterMarkers('merchant')">Merchant</a></li>
+                </ul>
+            </div>
+
+            <a href="{{ route('analytics.merchant.location') }}" class="btn btn-outline-default" style="width: 50px; height: 40px;" title="Reset Filters">
+                <i class="fa-solid fa-rotate my-1"></i>
+            </a>
+        </div>
+    </div>
+
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 col sm-6 col-md-4">
+            <x-monitoring-card title="Not Merchant" href="{{ route('analytics.monitoring.users') }}" icon="fa-users-line" value="{{ number_format($notMerchant) }}" content="" percentage="12%" />
+        </div>
+
+        <div class="col-12 col sm-6 col-md-4">
+            <x-monitoring-card title="Pending Merchant" href="" icon="fa-users-line" value="{{ number_format($pendingMerchant) }}" content="" percentage="12%" />
+        </div>
+
+        <div class="col-12 col sm-6 col-md-4">
+            <x-monitoring-card title="Active Merchant" href="{{ route('analytics.monitoring.application') }}" icon="fa-users-line" value="{{ number_format($activeMerchant) }}" content="" percentage="12%" />
+        </div>
+    </div>
+    <hr class="my-3">
+
+    <div id="map" class="rounded-3 my-8" style="height: 60vh"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-control-search/dist/leaflet-search.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-search/dist/leaflet-search.min.css" />
 
     <script>
-        let map = L.map('map').setView([-2.5489, 118.0149], 5);
+        let map = L.map('map').setView([-2.5489, 118.0149], 5); // indonesia
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
@@ -51,19 +92,20 @@
 
         // DATA
         let merchants = @json($merchants);
+        let allMarkers = [];
         let markersLayer = new L.LayerGroup();
         map.addLayer(markersLayer);
 
         merchants.forEach(merchant => {
             if (merchant.latitude && merchant.longitude) {
-                let icon = iconRed; // default icon
+                let icon = iconRed;
 
-                if (merchant.isMerchant == 'pending') icon = iconYellow;
-                else if (merchant.isMerchant == 'merchant') icon = iconGreen;
+                if (merchant.isMerchant === 'pending') icon = iconYellow;
+                else if (merchant.isMerchant === 'merchant') icon = iconGreen;
 
                 let marker = L.marker([merchant.latitude, merchant.longitude], {
-                        title: merchant.name,
-                        icon: icon
+                        icon: icon,
+                        status: merchant.isMerchant
                     })
                     .bindPopup(`
                         <strong>${merchant.name}</strong><br><br>
@@ -76,20 +118,46 @@
                         PIHK : ${merchant.pihk ?? '-'}<br>
                         Contact : ${merchant.contact ?? '-'}
                     `);
+
+                // Simpan nama travel untuk pencarian
+                marker.travelName = merchant.name.toLowerCase();
+
+                allMarkers.push(marker);
                 markersLayer.addLayer(marker);
             }
         });
 
-        // SEARCH
-        let searchControl = new L.Control.Search({
-            layer: markersLayer,
-            propertyName: 'title',
-            initial: false,
-            zoom: 10,
-            marker: false,
-            textPlaceholder: 'Cari travel...'
-        });
+        // Fungsi filter
+        function filterMarkers(status) {
+            markersLayer.clearLayers();
 
-        map.addControl(searchControl);
+            allMarkers.forEach(marker => {
+                if (status === 'all' || marker.options.status === status) {
+                    markersLayer.addLayer(marker);
+                }
+            });
+        }
+
+        // Fungsi pencarian manual
+        document.getElementById('searchInput').addEventListener('keyup', function (e) {
+            if (e.key === 'Enter') {
+                const query = this.value.toLowerCase();
+
+                const matchedMarkers = allMarkers.filter(marker => marker.travelName.includes(query));
+
+                if (matchedMarkers.length > 0) {
+                    markersLayer.clearLayers();
+
+                    matchedMarkers.forEach(marker => {
+                        markersLayer.addLayer(marker);
+                    });
+
+                    // map.setView(matchedMarkers[0].getLatLng(), 12); // Fokus ke salah satu marker
+                } else {
+                    alert('Travel tidak ditemukan.');
+                }
+
+            }
+        });
     </script>
 @endsection

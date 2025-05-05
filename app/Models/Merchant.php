@@ -9,11 +9,12 @@ class Merchant extends Model
 {
     use HasFactory;
 
+    protected $table = 'merchants';
     public $timestamps = false;
 
     protected $fillable = [
-        'id',
         'name',
+        'pt',
         'city',
         'latitude',
         'longitude',
@@ -23,9 +24,4 @@ class Merchant extends Model
         'contact',
         'isMerchant'
     ];
-
-    public function cityRelation() {
-        return $this->belongsTo(City::class);
-    }
-
 }

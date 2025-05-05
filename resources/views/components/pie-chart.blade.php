@@ -1,6 +1,6 @@
 @props(['title'])
 
-<div class="card rounded-3 shadow">
+<div class="card rounded-4">
     <div class="card-title text-center px-4 pt-4">
         <p class="fw-semibold text-gray fs-6 mb-0">{{ $title }}</p>
     </div>

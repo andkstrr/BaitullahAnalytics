@@ -80,7 +80,6 @@ body {
     color: #053600;
 }
 .search-box {
-    background-color: #F8F8F8;
     width: 200px;
 }
 .search-box input {
@@ -123,7 +122,7 @@ body {
 .table-custom td {
     border-bottom: 1px solid #dee2e6;
     vertical-align: middle;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
 }
 
@@ -137,16 +136,22 @@ body {
     transition: background-color 0.2s ease-in-out;
 }
 
-.card { background-color: #fcfcfc; border: none; }
+/* .card { background-color: #fcfcfc; border: none; } */
+/* .card { border-color: #fdfdfd; border-style: solid !important; border: 1px !important; } */
+.card { border-color: #ebe9e9 !important; border-width: 2px !important; }
 .toggle-btn { display: none; }
-.bg-gray { background-color: #fff; }
+.bg-gray { background-color: #e7e7e7; }
+.bg-light-gray { background-color: #f3f3f3; }
 .bg-red { background-color: #FBE0E3 !important; color: #E35E6A; }
 .bg-yellow { background-color: #FFF5E0 !important; color: #fdb72b;}
 .bg-green { background-color: #E8F5E9 !important; color: #00bd48; }
-.table-gray {  background-color: #007bff !important; /* Warna biru Bootstrap primary */
-    color: #fff; /* Warna teks putih untuk kontras */}
 .text-gray { color: gray; }
 .text-black { color: black; }
 .text-plus { color: #00bd48}
 .text-minus { color: rgb(218, 0, 0)}
+.avatar { width: 52px; height: 52px; }
 #map { height: 100vh; }
+.leaflet-control-search {
+    z-index: 9999 !important;
+}
+

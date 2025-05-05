@@ -9,7 +9,7 @@
 @section('app-name', 'baitullah.co.id')
 
 @section('content')
-    <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6>
+    <h6 class="section-title fw-semisemibold text-black fs-5">Overview</h6>
     <div class="row mt-4">
         <div class="col-12 col sm-6 col-md-4">
             <x-monitoring-card title="New Users" href="{{ route('analytics.monitoring.users') }}" icon="fa-users" value="376K" content="" percentage="12%" />

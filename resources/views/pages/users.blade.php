@@ -10,25 +10,21 @@
 
 @section('content')
     {{-- SECTION 1 --}}
-    <h6 class="section-title fw-semisemibold text-black fs-5 mt-14">Overview</h6>
+    <h6 class="section-title fw-semisemibold text-black fs-5">Overview</h6>
     <div class="row mt-4">
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <x-monitoring-card icon="fa-user" title="Total Visitors" href="" icon="fa-up-right-from-square" value="376K" content="" percentage="12%" />
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <x-monitoring-card icon="fa-user" title="Visitors is Active" href="" icon="fa-up-right-from-square" value="149" content="User" percentage="12%" />
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4">
-            <x-monitoring-card icon="fa-user" title="Traffic Website" href="" icon="fa-up-right-from-square" value="6" content="Type" percentage="12%" />
-        </div>
-
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <x-monitoring-card icon="fa-user" title="Visit Time (m)" href="" icon="fa-up-right-from-square" value="13" content="Minute" percentage="12%" />
         </div>
 
-        <div class="col-12 col-sm-12 col-md-4">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <x-monitoring-card icon="fa-user" title="Duration of Visit (m)" href="" icon="fa-up-right-from-square" value="10" content="minute" percentage="12%" />
         </div>
     </div><hr class="my-2">
