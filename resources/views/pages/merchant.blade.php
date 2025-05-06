@@ -79,7 +79,7 @@
 
                     {{-- STATUS DROPDOWN FILTER --}}
                     <div class="dropdown">
-                        <button class="btn btn-outline-default rounded-3 my-5 text-black fw-normal" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 90px; height: 40px;" title="Filter Status">
+                        <button class="btn btn-outline-default rounded-3 my-5 text-black fw-normal" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 90px; height: 40px;" title="Filter Status"  >
                             Filter
                         </button>
                         <ul class="dropdown-menu p-2" style="max-height: 300px; overflow-y: auto;">

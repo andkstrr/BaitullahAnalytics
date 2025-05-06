@@ -37,7 +37,6 @@
                                 @foreach ($cities as $city)
                                     <option value="{{ $city->id }}">{{ $city->name }}</option>
                                 @endforeach
-
                             </select>
                         </div>
 
@@ -88,7 +87,7 @@
                     </div>
 
                 <div class="mt-4 text-end">
-                    <button type="submit" class="btn btn-primary px-4">Simpan</button>
+                    <button type="submit" class="btn btn-success     px-4">Simpan</button>
                 </div>
             </form>
         </div>

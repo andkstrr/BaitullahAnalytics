@@ -12,10 +12,10 @@ class AccountSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'cahyo',
+            'name' => 'tes',
             'role' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin123'),
+            'email' => 'tes@gmail.com',
+            'password' => Hash::make('12345678'),
         ]);
     }
 }

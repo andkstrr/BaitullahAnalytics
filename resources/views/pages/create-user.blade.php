@@ -38,9 +38,11 @@
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Role</label>
-                <input type="text" id="role" name="role"
-                    class="form-control"
-                    placeholder="Masukkan role" required />
+                <select name="role" id="role" class="form-select">
+                    <option disabled selected>Pilih Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="marketing">Marketing</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
